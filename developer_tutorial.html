@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Developer tutorial &mdash; aioftp 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo.ico"/>
+    <link rel="top" title="aioftp 0.4.0 documentation" href="index.html" />
+    <link rel="next" title="Client API" href="client_api.html" />
+    <link rel="prev" title="Server tutorial" href="server_tutorial.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="developer-tutorial">
+<h1>Developer tutorial<a class="headerlink" href="#developer-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Both, client and server classes are inherit-minded when created. So, you need
+to inherit class and override and/or add methods to bring your functionality.</p>
+<div class="section" id="client">
+<h2>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<p>For simple commands, which requires no extra connection, realization of new
+method is pretty simple. You just need to use <a class="reference internal" href="client_api.html#aioftp.Client.command" title="aioftp.Client.command"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.command()</span></code></a>
+(or even don&#8217;t use it). For example, lets realize «NOOP» command, which do
+nothing:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyClient</span><span class="p">(</span><span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">):</span>
+
+    <span class="n">async</span> <span class="k">def</span> <span class="nf">noop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s">&quot;NOOP&quot;</span><span class="p">,</span> <span class="s">&quot;2xx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Lets take a look to a more complex example. Say, we want to collect some data
+via extra connection. For this one you need one of «extra connection» methods:
+<a class="reference internal" href="client_api.html#aioftp.Client.download_stream" title="aioftp.Client.download_stream"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.download_stream()</span></code></a>,
+<a class="reference internal" href="client_api.html#aioftp.Client.upload_stream" title="aioftp.Client.upload_stream"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.upload_stream()</span></code></a>, <a class="reference internal" href="client_api.html#aioftp.Client.append_stream" title="aioftp.Client.append_stream"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.append_stream()</span></code></a>
+or (for more complex situations) <a class="reference internal" href="client_api.html#aioftp.Client.get_stream" title="aioftp.Client.get_stream"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.get_stream()</span></code></a>
+Here we implements some «COLL x» command. I don&#8217;t know why, but it
+retrieve some data via extra connection. And the size of data is equal to «x».</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyClient</span><span class="p">(</span><span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">):</span>
+
+    <span class="n">async</span> <span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+
+        <span class="n">collected</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_stream</span><span class="p">(</span><span class="s">&quot;COLL &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="s">&quot;1xx&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+
+            <span class="n">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+
+                <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="s">&quot;big&quot;</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;received:&quot;</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                <span class="n">collected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">collected</span>
+</pre></div>
+</div>
+<p>Client retrieve passive (or active in future versions) via <cite>get_stream</cite> and
+read blocks of data until connection is closed. Then finishing stream and
+return result. Most of client functions (except low-level from BaseClient)
+are made in pretty same manner. It is a good idea you to see source code of
+<a class="reference internal" href="client_api.html#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a> in client.py to see when and why this or that
+techniques used.</p>
+</div>
+<div class="section" id="server">
+<h2>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h2>
+<p>Server class based on dispatcher, which wait for result of tasks via
+<code class="xref py py-meth docutils literal"><span class="pre">asyncio.wait()</span></code>. Tasks are different: command-reader, result-writer,
+commander-action, extra-connection-workers. FTP methods dispatched by name.</p>
+<p>Lets say we want implement «NOOP» command for server again:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyServer</span><span class="p">(</span><span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">):</span>
+
+    <span class="n">async</span> <span class="k">def</span> <span class="nf">noop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">rest</span><span class="p">):</span>
+
+        <span class="n">connection</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="s">&quot;200&quot;</span><span class="p">,</span> <span class="s">&quot;boring&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>What we have here? Dispatcher calls our method with some arguments:</p>
+<ul class="simple">
+<li><cite>connection</cite> is state of connection, this can hold and wait for futures.
+There many connection values you can interest in: addresses, throttles,
+timeouts, extra_workers, response, etc. You can add your own flags and values
+to the «connection» and edit the existing ones of course. It&#8217;s better to see
+source code of server, cause connection is heart of dispatcher ↔ task and
+task ↔ task interaction and state container.</li>
+<li><cite>rest</cite>: rest part of command string</li>
+</ul>
+<p>There is some decorators, which can help for routine checks: is user logged,
+can he read/write this path, etc.
+<a class="reference internal" href="server_api.html#aioftp.ConnectionConditions" title="aioftp.ConnectionConditions"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ConnectionConditions</span></code></a>
+<a class="reference internal" href="server_api.html#aioftp.PathConditions" title="aioftp.PathConditions"><code class="xref py py-class docutils literal"><span class="pre">aioftp.PathConditions</span></code></a>
+<a class="reference internal" href="server_api.html#aioftp.PathPermissions" title="aioftp.PathPermissions"><code class="xref py py-class docutils literal"><span class="pre">aioftp.PathPermissions</span></code></a></p>
+<p>For more complex example lets try same client «COLL x» command.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyServer</span><span class="p">(</span><span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">):</span>
+
+    <span class="nd">@aioftp.ConnectionConditions</span><span class="p">(</span>
+        <span class="n">aioftp</span><span class="o">.</span><span class="n">ConnectionConditions</span><span class="o">.</span><span class="n">login_required</span><span class="p">,</span>
+        <span class="n">aioftp</span><span class="o">.</span><span class="n">ConnectionConditions</span><span class="o">.</span><span class="n">passive_server_started</span><span class="p">)</span>
+    <span class="n">async</span> <span class="k">def</span> <span class="nf">coll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">rest</span><span class="p">):</span>
+
+        <span class="nd">@aioftp.ConnectionConditions</span><span class="p">(</span>
+            <span class="n">aioftp</span><span class="o">.</span><span class="n">ConnectionConditions</span><span class="o">.</span><span class="n">data_connection_made</span><span class="p">,</span>
+            <span class="n">wait</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+            <span class="n">fail_code</span><span class="o">=</span><span class="s">&quot;425&quot;</span><span class="p">,</span>
+            <span class="n">fail_info</span><span class="o">=</span><span class="s">&quot;Can&#39;t open data connection&quot;</span><span class="p">)</span>
+        <span class="nd">@aioftp.server.worker</span>
+        <span class="n">async</span> <span class="k">def</span> <span class="nf">coll_worker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">rest</span><span class="p">):</span>
+
+            <span class="n">stream</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">data_connection</span>
+            <span class="k">del</span> <span class="n">connection</span><span class="o">.</span><span class="n">data_connection</span>
+
+            <span class="n">async</span> <span class="k">with</span> <span class="n">stream</span><span class="p">:</span>
+
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+
+                    <span class="n">binary</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s">&quot;big&quot;</span><span class="p">)</span>
+                    <span class="n">await</span> <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">binary</span><span class="p">)</span>
+
+            <span class="n">connection</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="s">&quot;200&quot;</span><span class="p">,</span> <span class="s">&quot;coll transfer done&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+
+        <span class="n">count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span>
+        <span class="n">coro</span> <span class="o">=</span> <span class="n">coll_worker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">rest</span><span class="p">)</span>
+        <span class="n">task</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">coro</span><span class="p">)</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">extra_workers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="s">&quot;150&quot;</span><span class="p">,</span> <span class="s">&quot;coll transfer started&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>This action requires passive connection, that is why we use worker. We
+should be able to receive commands when receiving data with extra connection,
+that is why we send our task to dispatcher via <cite>extra_workers</cite>. Task will be
+pending on next «iteration» of dispatcher.</p>
+<p>Lets see what we have.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">async</span> <span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+
+    <span class="n">server</span> <span class="o">=</span> <span class="n">MyServer</span><span class="p">()</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">MyClient</span><span class="p">()</span>
+
+    <span class="n">await</span> <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">8021</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">8021</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">()</span>
+
+    <span class="n">collected</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">collected</span><span class="p">)</span>
+
+    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">await</span> <span class="n">server</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+        <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+        <span class="n">format</span><span class="o">=</span><span class="s">&quot;</span><span class="si">%(asctime)s</span><span class="s"> [</span><span class="si">%(name)s</span><span class="s">] </span><span class="si">%(message)s</span><span class="s">&quot;</span><span class="p">,</span>
+        <span class="n">datefmt</span><span class="o">=</span><span class="s">&quot;[%H:%M:%S]:&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">test</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And the output for this is:</p>
+<div class="highlight-python"><div class="highlight"><pre>[01:18:54]: [aioftp.server] serving on 127.0.0.1:8021
+[01:18:54]: [aioftp.server] new connection from 127.0.0.1:48883
+[01:18:54]: [aioftp.server] 220 welcome
+[01:18:54]: [aioftp.client] 220 welcome
+[01:18:54]: [aioftp.client] USER anonymous
+[01:18:54]: [aioftp.server] USER anonymous
+[01:18:54]: [aioftp.server] 230 anonymous login
+[01:18:54]: [aioftp.client] 230 anonymous login
+[01:18:54]: [aioftp.client] TYPE I
+[01:18:54]: [aioftp.server] TYPE I
+[01:18:54]: [aioftp.server] 200
+[01:18:54]: [aioftp.client] 200
+[01:18:54]: [aioftp.client] PASV
+[01:18:54]: [aioftp.server] PASV
+[01:18:54]: [aioftp.server] 227-listen socket created
+[01:18:54]: [aioftp.server] 227 (127,0,0,1,223,249)
+[01:18:54]: [aioftp.client] 227-listen socket created
+[01:18:54]: [aioftp.client] 227 (127,0,0,1,223,249)
+[01:18:54]: [aioftp.client] COLL 20
+[01:18:54]: [aioftp.server] COLL 20
+[01:18:54]: [aioftp.server] 150 coll transfer started
+[01:18:54]: [aioftp.client] 150 coll transfer started
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x00&#39; 0
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x01&#39; 1
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x02&#39; 2
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x03&#39; 3
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x04&#39; 4
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x05&#39; 5
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x06&#39; 6
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x07&#39; 7
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x08&#39; 8
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\t&#39; 9
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\n&#39; 10
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x0b&#39; 11
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x0c&#39; 12
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\r&#39; 13
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x0e&#39; 14
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x0f&#39; 15
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x10&#39; 16
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x11&#39; 17
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x12&#39; 18
+[01:18:54]: [aioftp.server] 200 coll transfer done
+received: b&#39;\x00\x00\x00\x00\x00\x00\x00\x13&#39; 19
+[01:18:54]: [aioftp.client] 200 coll transfer done
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+[01:18:54]: [aioftp.client] QUIT
+[01:18:54]: [aioftp.server] QUIT
+[01:18:54]: [aioftp.server] 221 bye
+[01:18:54]: [aioftp.server] closing connection from 127.0.0.1:48883
+[01:18:54]: [aioftp.client] 221 bye
+done
+</pre></div>
+</div>
+<p>It is a good idea you to see source code of <a class="reference internal" href="server_api.html#aioftp.Server" title="aioftp.Server"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Server</span></code></a> in
+server.py to see when and why this or that techniques used.</p>
+</div>
+<div class="section" id="path-abstraction-layer">
+<h2>Path abstraction layer<a class="headerlink" href="#path-abstraction-layer" title="Permalink to this headline">¶</a></h2>
+<p>Since file io is blocking and aioftp tries to be non-blocking ftp library, we
+need some abstraction layer for filesystem operations. That is why pathio
+exists. If you want to create your own pathio, then you should inherit
+<a class="reference internal" href="path_io_api.html#aioftp.AbstractPathIO" title="aioftp.AbstractPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractPathIO</span></code></a> and override it methods.</p>
+</div>
+<div class="section" id="user-manager">
+<h2>User Manager<a class="headerlink" href="#user-manager" title="Permalink to this headline">¶</a></h2>
+<p>User manager purpose is to split retrieving user information from network or
+database and server logic. You can create your own user manager by inherit
+<a class="reference internal" href="server_api.html#aioftp.AbstractUserManager" title="aioftp.AbstractUserManager"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractUserManager</span></code></a> and override it methods. The new user
+manager should be passed to server as <cite>users</cite> argument when initialize server.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Developer tutorial</a><ul>
+<li><a class="reference internal" href="#client">Client</a></li>
+<li><a class="reference internal" href="#server">Server</a></li>
+<li><a class="reference internal" href="#path-abstraction-layer">Path abstraction layer</a></li>
+<li><a class="reference internal" href="#user-manager">User Manager</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="server_tutorial.html" title="previous chapter">Server tutorial</a></li>
+      <li>Next: <a href="client_api.html" title="next chapter">Client API</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/developer_tutorial.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, pohmelie.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/developer_tutorial.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/pohmelie/aioftp" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
