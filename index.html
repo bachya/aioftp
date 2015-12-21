@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>aioftp &mdash; aioftp 0.4.0 documentation</title>
+    <title>aioftp &mdash; aioftp 0.4.1 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.4.0',
+        VERSION:     '0.4.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.4.0 documentation" href="#" />
+    <link rel="top" title="aioftp 0.4.1 documentation" href="#" />
     <link rel="next" title="Client tutorial" href="client_tutorial.html" />
    
   
@@ -63,6 +63,35 @@ LIST (but it&#8217;s not recommended to use it, cause it has no standard format)
 MLST, RNFR, RNTO, DELE, STOR, RETR, TYPE (only &#8220;I&#8221;), PASV, ABOR, APPE</p>
 <p>This subsets are enough for 99% of tasks, but if you need something, then you
 can easily extend current set of commands.</p>
+</div>
+<div class="section" id="server-benchmark">
+<h2>Server benchmark<a class="headerlink" href="#server-benchmark" title="Permalink to this headline">¶</a></h2>
+<p>Compared with <a class="reference external" href="https://github.com/giampaolo/pyftpdlib">pyftpdlib</a> and
+checked with its ftpbench script.</p>
+<p>aioftp 0.4.1</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./ftpbench -u anonymous -p none -P 8021 -b all
+STOR (client -&gt; server)                              146.06 MB/sec
+RETR (server -&gt; client)                              273.88 MB/sec
+200 concurrent clients (connect, login)                0.36 secs
+STOR (1 file with 200 idle clients)                  121.02 MB/sec
+RETR (1 file with 200 idle clients)                  274.31 MB/sec
+200 concurrent clients (RETR 10.0M file)              16.09 secs
+200 concurrent clients (STOR 10.0M file)              19.03 secs
+200 concurrent clients (QUIT)                          0.11 secs
+</pre></div>
+</div>
+<p>pyftpdlib 1.5.0</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./ftpbench -u anonymous -p none -P 8021 -b all
+STOR (client -&gt; server)                              198.65 MB/sec
+RETR (server -&gt; client)                             3361.68 MB/sec
+200 concurrent clients (connect, login)                0.09 secs
+STOR (1 file with 200 idle clients)                  209.34 MB/sec
+RETR (1 file with 200 idle clients)                 3367.59 MB/sec
+200 concurrent clients (RETR 10.0M file)               1.04 secs
+200 concurrent clients (STOR 10.0M file)               1.98 secs
+200 concurrent clients (QUIT)                          0.02 secs
+</pre></div>
+</div>
 </div>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
@@ -205,6 +234,7 @@ can easily extend current set of commands.</p>
 <li><a class="reference internal" href="#">aioftp</a><ul>
 <li><a class="reference internal" href="#features">Features</a></li>
 <li><a class="reference internal" href="#goals">Goals</a></li>
+<li><a class="reference internal" href="#server-benchmark">Server benchmark</a></li>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li><a class="reference internal" href="#license">License</a></li>
 <li><a class="reference internal" href="#library-installation">Library Installation</a></li>

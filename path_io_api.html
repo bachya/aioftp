@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Path abstraction layer API &mdash; aioftp 0.4.0 documentation</title>
+    <title>Path abstraction layer API &mdash; aioftp 0.4.1 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.4.0',
+        VERSION:     '0.4.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.4.0 documentation" href="index.html" />
+    <link rel="top" title="aioftp 0.4.1 documentation" href="index.html" />
     <link rel="prev" title="Common API" href="common_api.html" />
    
   
@@ -365,7 +365,8 @@ st_size, st_mtime, st_ctime, st_nlink, st_mode</td>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aioftp.pathio.AbstractPathIO</span></code></p>
 <p>Non-blocking path io. Based on
 <a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.run_in_executor" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.run_in_executor()</span></code></a> and
-<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a> methods.</p>
+<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a> methods. It&#8217;s really slow, so it&#8217;s better to avoid
+usage of this path io layer.</p>
 </dd></dl>
 
 <dl class="class">
