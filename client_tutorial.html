@@ -29,7 +29,7 @@
     <link rel="prev" title="aioftp" href="index.html" />
    
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
   <body role="document">  
@@ -129,7 +129,7 @@ with <cite>async for</cite></p>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.is_dir" title="aioftp.Client.is_dir"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.is_dir()</span></code></a></p>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.exists" title="aioftp.Client.exists"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.exists()</span></code></a></p>
 </div></blockquote>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">if_file</span><span class="p">(</span><span class="s">&quot;/public_html&quot;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">is_file</span><span class="p">(</span><span class="s">&quot;/public_html&quot;</span><span class="p">)</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(</span><span class="s">&quot;/public_html&quot;</span><span class="p">)</span>
 <span class="go">True</span>
@@ -222,6 +222,8 @@ work with streams is:</p>
 <span class="gp">... </span>        <span class="n">stream</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="gp">... </span>        <span class="k">break</span>
 <span class="gp">...</span>
+<span class="gp">... </span><span class="k">else</span><span class="p">:</span>
+<span class="gp">...</span>
 <span class="gp">... </span>    <span class="n">await</span> <span class="n">stream</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -240,18 +242,18 @@ work with streams is:</p>
 </div>
 <div class="section" id="path-abstraction-layer">
 <h2>Path abstraction layer<a class="headerlink" href="#path-abstraction-layer" title="Permalink to this headline">¶</a></h2>
-<p>aioftp provides abstraction of file system operations. You can use one of
-existence:</p>
+<p>aioftp provides abstraction of file system operations. You can use exist ones:</p>
 <ul class="simple">
 <li><a class="reference internal" href="path_io_api.html#aioftp.PathIO" title="aioftp.PathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.PathIO</span></code></a> — blocking path operations</li>
 <li><a class="reference internal" href="path_io_api.html#aioftp.AsyncPathIO" title="aioftp.AsyncPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AsyncPathIO</span></code></a> — non-blocking path operations, this one is
 blocking ones just wrapped with
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.run_in_executor" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.run_in_executor()</span></code></a></li>
+<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.run_in_executor" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.run_in_executor()</span></code></a>. It&#8217;s really slow, so it&#8217;s
+better to avoid usage of this path io layer.</li>
 <li><a class="reference internal" href="path_io_api.html#aioftp.MemoryPathIO" title="aioftp.MemoryPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.MemoryPathIO</span></code></a> — in-memory realization of file system, this
 one is just proof of concept and probably not too fast (as it can be).</li>
 </ul>
 <p>You can specify <cite>path_io_factory</cite> when creating <a class="reference internal" href="client_api.html#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a>
-instance. Default factory is <a class="reference internal" href="path_io_api.html#aioftp.AsyncPathIO" title="aioftp.AsyncPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AsyncPathIO</span></code></a>.</p>
+instance. Default factory is <a class="reference internal" href="path_io_api.html#aioftp.PathIO" title="aioftp.PathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.PathIO</span></code></a>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">path_io_factory</span><span class="o">=</span><span class="n">pathio</span><span class="o">.</span><span class="n">MemoryPathIO</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -366,8 +368,8 @@ with this library in mind.</p>
       &copy;2015, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
       <a href="_sources/client_tutorial.txt"

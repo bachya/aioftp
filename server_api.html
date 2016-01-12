@@ -29,7 +29,7 @@
     <link rel="prev" title="Client API" href="client_api.html" />
    
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
   <body role="document">  
@@ -209,12 +209,6 @@ connection in bytes per second</li>
 </tr>
 </tbody>
 </table>
-<dl class="attribute">
-<dt id="aioftp.AbstractUserManager.GetUserResponse">
-<code class="descname">GetUserResponse</code><a class="headerlink" href="#aioftp.AbstractUserManager.GetUserResponse" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">UserManagerResponse</span></code></p>
-</dd></dl>
-
 <dl class="method">
 <dt id="aioftp.AbstractUserManager.authenticate">
 <code class="descname">authenticate</code><span class="sig-paren">(</span><em>user</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractUserManager.authenticate" title="Permalink to this definition">¶</a></dt>
@@ -224,9 +218,14 @@ connection in bytes per second</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> (<a class="reference internal" href="#aioftp.User" title="aioftp.User"><code class="xref py py-class docutils literal"><span class="pre">aioftp.User</span></code></a>) &#8211; user</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>user</strong> (<a class="reference internal" href="#aioftp.User" title="aioftp.User"><code class="xref py py-class docutils literal"><span class="pre">aioftp.User</span></code></a>) &#8211; user</li>
+<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; password</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -262,6 +261,21 @@ connection in bytes per second</li>
 </table>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="class">
+<dt id="aioftp.server.MemoryUserManager">
+<em class="property">class </em><code class="descclassname">aioftp.server.</code><code class="descname">MemoryUserManager</code><span class="sig-paren">(</span><em>users</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.server.MemoryUserManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>A built-in user manager that keeps predefined set of users in memory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>users</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a>, etc. of
+<a class="reference internal" href="#aioftp.User" title="aioftp.User"><code class="xref py py-class docutils literal"><span class="pre">aioftp.User</span></code></a>) &#8211; container of users</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="class">
@@ -485,8 +499,8 @@ to client if permission denied</p>
       &copy;2015, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
       <a href="_sources/server_api.txt"

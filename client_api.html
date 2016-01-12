@@ -29,7 +29,7 @@
     <link rel="prev" title="Developer tutorial" href="developer_tutorial.html" />
    
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
   <body role="document">  
@@ -646,7 +646,8 @@ file and change it name, as well with directories)</li>
 <dl class="class">
 <dt id="aioftp.DataConnectionThrottleStreamIO">
 <em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">DataConnectionThrottleStreamIO</code><span class="sig-paren">(</span><em>client</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.DataConnectionThrottleStreamIO" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add <cite>finish</cite> method to <a class="reference internal" href="common_api.html#aioftp.ThrottleStreamIO" title="aioftp.ThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ThrottleStreamIO</span></code></a>, which is
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aioftp.common.ThrottleStreamIO</span></code></p>
+<p>Add <cite>finish</cite> method to <a class="reference internal" href="common_api.html#aioftp.ThrottleStreamIO" title="aioftp.ThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ThrottleStreamIO</span></code></a>, which is
 specific for data connection. This requires <cite>client</cite>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -792,8 +793,8 @@ then it passes.</td>
       &copy;2015, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
       <a href="_sources/client_api.txt"
