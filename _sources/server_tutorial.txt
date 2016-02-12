@@ -73,7 +73,7 @@ aioftp provides abstraction of file system operations. You can use exist ones:
 * :py:class:`aioftp.MemoryPathIO` — in-memory realization of file system, this
   one is just proof of concept and probably not too fast (as it can be).
 
-You can specify `path_io_factory` when creating :py:class:`aioftp.Client`
+You can specify `path_io_factory` when creating :py:class:`aioftp.Server`
 instance. Default factory is :py:class:`aioftp.PathIO`.
 
 ::

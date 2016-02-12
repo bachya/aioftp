@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Server tutorial &mdash; aioftp 0.4.1 documentation</title>
+    <title>Server tutorial &mdash; aioftp 0.5.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.4.1',
+        VERSION:     '0.5.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.4.1 documentation" href="index.html" />
+    <link rel="top" title="aioftp 0.5.0 documentation" href="index.html" />
     <link rel="next" title="Developer tutorial" href="developer_tutorial.html" />
     <link rel="prev" title="Client tutorial" href="client_tutorial.html" />
    
@@ -100,7 +100,7 @@ better to avoid usage of this path io layer.</li>
 <li><a class="reference internal" href="path_io_api.html#aioftp.MemoryPathIO" title="aioftp.MemoryPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.MemoryPathIO</span></code></a> — in-memory realization of file system, this
 one is just proof of concept and probably not too fast (as it can be).</li>
 </ul>
-<p>You can specify <cite>path_io_factory</cite> when creating <a class="reference internal" href="client_api.html#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a>
+<p>You can specify <cite>path_io_factory</cite> when creating <a class="reference internal" href="server_api.html#aioftp.Server" title="aioftp.Server"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Server</span></code></a>
 instance. Default factory is <a class="reference internal" href="path_io_api.html#aioftp.PathIO" title="aioftp.PathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.PathIO</span></code></a>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="n">path_io_factory</span><span class="o">=</span><span class="n">aioftp</span><span class="o">.</span><span class="n">MemoryPathIO</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
