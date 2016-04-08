@@ -53,6 +53,12 @@ lets start!</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">&quot;user&quot;</span><span class="p">,</span> <span class="s">&quot;pass&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Or just use <a class="reference internal" href="client_api.html#aioftp.ClientSession" title="aioftp.ClientSession"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ClientSession</span></code></a> async context, which will connect,
+login and quit automatically</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="s">&quot;ftp.server.com&quot;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="s">&quot;user&quot;</span><span class="p">,</span> <span class="s">&quot;pass&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="c"># do</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="download-and-upload-paths">
 <h2>Download and upload paths<a class="headerlink" href="#download-and-upload-paths" title="Permalink to this headline">¶</a></h2>

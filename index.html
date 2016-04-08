@@ -119,16 +119,13 @@ RETR (1 file with 200 idle clients)                 3367.59 MB/sec
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">get_mp3</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
 
-    <span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
-    <span class="n">async</span> <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="n">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
 
-        <span class="k">if</span> <span class="n">info</span><span class="p">[</span><span class="s">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;file&quot;</span> <span class="ow">and</span> <span class="n">path</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s">&quot;.mp3&quot;</span><span class="p">:</span>
+        <span class="n">async</span> <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
 
-            <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">info</span><span class="p">[</span><span class="s">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;file&quot;</span> <span class="ow">and</span> <span class="n">path</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s">&quot;.mp3&quot;</span><span class="p">:</span>
 
-    <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 
 
 <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>

@@ -644,6 +644,37 @@ file and change it name, as well with directories)</li>
 </dd></dl>
 
 <dl class="class">
+<dt id="aioftp.ClientSession">
+<em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">ClientSession</code><span class="sig-paren">(</span><em>host</em>, <em>port=21</em>, <em>user='anonymous'</em>, <em>password='anon&#64;'</em>, <em>account=''</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.ClientSession" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a> wrapper to use client as context manager. This
+make async call to <a class="reference internal" href="#aioftp.Client.connect" title="aioftp.Client.connect"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.connect()</span></code></a>,
+<a class="reference internal" href="#aioftp.Client.login" title="aioftp.Client.login"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.login()</span></code></a> on enter and <a class="reference internal" href="#aioftp.Client.quit" title="aioftp.Client.quit"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.quit()</span></code></a>
+on exit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; host name for connection</li>
+<li><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; port number for connection</li>
+<li><strong>user</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; username</li>
+<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; password</li>
+<li><strong>account</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; account (almost always blank)</li>
+<li><strong>**kwargs</strong> &#8211; <p>keyword arguments, which passed to
+<a class="reference internal" href="#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="c"># do</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
 <dt id="aioftp.DataConnectionThrottleStreamIO">
 <em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">DataConnectionThrottleStreamIO</code><span class="sig-paren">(</span><em>client</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.DataConnectionThrottleStreamIO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aioftp.common.ThrottleStreamIO</span></code></p>
