@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Client API &mdash; aioftp 0.5.0 documentation</title>
+    <title>Client API &mdash; aioftp 0.6.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0',
+        VERSION:     '0.6.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,12 +24,12 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.5.0 documentation" href="index.html" />
+    <link rel="top" title="aioftp 0.6.0 documentation" href="index.html" />
     <link rel="next" title="Server API" href="server_api.html" />
     <link rel="prev" title="Developer tutorial" href="developer_tutorial.html" />
    
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
   </head>
   <body role="document">  
@@ -85,15 +85,20 @@ unlink file, etc.)</li>
 
 <dl class="method">
 <dt id="aioftp.Client.append_stream">
-<code class="descname">append_stream</code><span class="sig-paren">(</span><em>destination</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.append_stream" title="Permalink to this definition">¶</a></dt>
+<code class="descname">append_stream</code><span class="sig-paren">(</span><em>destination</em>, <em>*</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.append_stream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create stream for append (write) data to <cite>destination</cite> file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file on server side</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file on server side</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="common_api.html#aioftp.ThrottleStreamIO" title="aioftp.ThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ThrottleStreamIO</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="common_api.html#aioftp.ThrottleStreamIO" title="aioftp.ThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ThrottleStreamIO</span></code></a></p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -216,16 +221,21 @@ file and change it name, as well with directories)</li>
 
 <dl class="method">
 <dt id="aioftp.Client.download_stream">
-<code class="descname">download_stream</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.download_stream" title="Permalink to this definition">¶</a></dt>
+<code class="descname">download_stream</code><span class="sig-paren">(</span><em>source</em>, <em>*</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.download_stream" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Create stream for read data from <cite>source</cite> file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; source path of file on server side</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; source path of file on server side</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="common_api.html#aioftp.ThrottleStreamIO" title="aioftp.ThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ThrottleStreamIO</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="common_api.html#aioftp.ThrottleStreamIO" title="aioftp.ThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ThrottleStreamIO</span></code></a></p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -283,7 +293,7 @@ file and change it name, as well with directories)</li>
 
 <dl class="method">
 <dt id="aioftp.Client.get_stream">
-<code class="descname">get_stream</code><span class="sig-paren">(</span><em>*command_args</em>, <em>conn_type='I'</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.get_stream" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_stream</code><span class="sig-paren">(</span><em>*command_args</em>, <em>conn_type='I'</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.get_stream" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Create <a class="reference internal" href="#aioftp.DataConnectionThrottleStreamIO" title="aioftp.DataConnectionThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.DataConnectionThrottleStreamIO</span></code></a> for straight
 read/write io.</p>
@@ -294,6 +304,7 @@ read/write io.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>command_args</strong> &#8211; arguments for <a class="reference internal" href="#aioftp.Client.command" title="aioftp.Client.command"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.command()</span></code></a></li>
 <li><strong>conn_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; connection type (&#8220;I&#8221;, &#8220;A&#8221;, &#8220;E&#8221;, &#8220;L&#8221;)</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
 </ul>
 </td>
 </tr>
@@ -627,15 +638,20 @@ file and change it name, as well with directories)</li>
 
 <dl class="method">
 <dt id="aioftp.Client.upload_stream">
-<code class="descname">upload_stream</code><span class="sig-paren">(</span><em>destination</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.upload_stream" title="Permalink to this definition">¶</a></dt>
+<code class="descname">upload_stream</code><span class="sig-paren">(</span><em>destination</em>, <em>*</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.upload_stream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create stream for write data to <cite>destination</cite> file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file on server side</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file on server side</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="common_api.html#aioftp.ThrottleStreamIO" title="aioftp.ThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ThrottleStreamIO</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="common_api.html#aioftp.ThrottleStreamIO" title="aioftp.ThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ThrottleStreamIO</span></code></a></p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -824,8 +840,8 @@ then it passes.</td>
       &copy;2015, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
       
       |
       <a href="_sources/client_api.txt"

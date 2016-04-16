@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Path abstraction layer API &mdash; aioftp 0.5.0 documentation</title>
+    <title>Path abstraction layer API &mdash; aioftp 0.6.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0',
+        VERSION:     '0.6.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,11 +24,11 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.5.0 documentation" href="index.html" />
+    <link rel="top" title="aioftp 0.6.0 documentation" href="index.html" />
     <link rel="prev" title="Common API" href="common_api.html" />
    
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
   </head>
   <body role="document">  
@@ -71,7 +71,7 @@ is in your implementation of read, write and close</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to create</li>
 <li><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; specifies the mode in which the file is opened (&#8220;rb&#8221;,
-&#8220;wb&#8221;, &#8220;ab&#8221; (read, write, append, all binary))</li>
+&#8220;wb&#8221;, &#8220;ab&#8221;, &#8220;r+b&#8221; (read, write, append, read/write, all binary))</li>
 </ul>
 </td>
 </tr>
@@ -268,6 +268,27 @@ parameters passed to <a class="reference internal" href="#aioftp.AbstractPathIO.
 </dd></dl>
 
 <dl class="method">
+<dt id="aioftp.AbstractPathIO.seek">
+<code class="descname">seek</code><span class="sig-paren">(</span><em>file</em>, <em>offset</em>, <em>whence=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<p>Change the stream position to the given byte <cite>offset</cite>. Same behaviour
+as <a class="reference external" href="https://docs.python.org/3/library/io.html#io.IOBase.seek" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">io.IOBase.seek()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> &#8211; file-object from <a class="reference internal" href="#aioftp.AbstractPathIO.open" title="aioftp.AbstractPathIO.open"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractPathIO.open</span></code></a></li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; relative byte offset</li>
+<li><strong>whence</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; base position for offset</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="aioftp.AbstractPathIO.stat">
 <code class="descname">stat</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.stat" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
@@ -439,8 +460,8 @@ and probably not so fast as it can be.</p>
       &copy;2015, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
       
       |
       <a href="_sources/path_io_api.txt"

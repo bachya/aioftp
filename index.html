@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>aioftp &mdash; aioftp 0.5.0 documentation</title>
+    <title>aioftp &mdash; aioftp 0.6.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.5.0',
+        VERSION:     '0.6.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,11 +24,11 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.5.0 documentation" href="#" />
+    <link rel="top" title="aioftp 0.6.0 documentation" href="#" />
     <link rel="next" title="Client tutorial" href="client_tutorial.html" />
    
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
   </head>
   <body role="document">  
@@ -57,10 +57,10 @@
 <li>Very high level api.</li>
 </ul>
 <p>Client use this commands: USER, PASS, ACCT, PWD, CWD, CDUP, MKD, RMD, MLSD,
-MLST, RNFR, RNTO, DELE, STOR, APPE, RETR, TYPE, PASV, ABOR, QUIT</p>
+MLST, RNFR, RNTO, DELE, STOR, APPE, RETR, TYPE, PASV, ABOR, QUIT, REST</p>
 <p>Server support this commands: USER, PASS, QUIT, PWD, CWD, CDUP, MKD, RMD, MLSD,
 LIST (but it&#8217;s not recommended to use it, cause it has no standard format),
-MLST, RNFR, RNTO, DELE, STOR, RETR, TYPE (only &#8220;I&#8221;), PASV, ABOR, APPE</p>
+MLST, RNFR, RNTO, DELE, STOR, RETR, TYPE (only &#8220;I&#8221;), PASV, ABOR, APPE, REST</p>
 <p>This subsets are enough for 99% of tasks, but if you need something, then you
 can easily extend current set of commands.</p>
 </div>
@@ -119,7 +119,7 @@ RETR (1 file with 200 idle clients)                 3367.59 MB/sec
 
 <span class="n">async</span> <span class="k">def</span> <span class="nf">get_mp3</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
 
-    <span class="n">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
 
         <span class="n">async</span> <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
 
@@ -175,7 +175,7 @@ RETR (1 file with 200 idle clients)                 3367.59 MB/sec
 <li class="toctree-l2"><a class="reference internal" href="client_tutorial.html#dealing-with-directories">Dealing with directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client_tutorial.html#rename-move-path">Rename (move) path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client_tutorial.html#closing-connection">Closing connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="client_tutorial.html#advanced-download-and-upload-abort">Advanced download and upload, abort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_tutorial.html#advanced-download-and-upload-abort-restart">Advanced download and upload, abort, restart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client_tutorial.html#throttle">Throttle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client_tutorial.html#path-abstraction-layer">Path abstraction layer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client_tutorial.html#timeouts">Timeouts</a></li>
@@ -277,8 +277,8 @@ RETR (1 file with 200 idle clients)                 3367.59 MB/sec
       &copy;2015, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
       
       |
       <a href="_sources/index.txt"
