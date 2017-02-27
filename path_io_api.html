@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Path abstraction layer API &mdash; aioftp 0.6.0 documentation</title>
+    <title>Path abstraction layer API &#8212; aioftp 0.6.2 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.6.0',
+        VERSION:     '0.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,19 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.6.0 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="aioftp 0.6.2 documentation" href="index.html" />
     <link rel="prev" title="Common API" href="common_api.html" />
    
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">  
+  <body role="document">
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -49,8 +54,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <cite>None</cite>) &#8211; timeout used by <cite>with_timeout</cite> decorator</li>
-<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use</li>
+<li><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <cite>None</cite>) &#8211; timeout used by <cite>with_timeout</cite> decorator</li>
+<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use</li>
 </ul>
 </td>
 </tr>
@@ -59,7 +64,7 @@
 <dl class="method">
 <dt id="aioftp.AbstractPathIO._open">
 <code class="descname">_open</code><span class="sig-paren">(</span><em>path</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO._open" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Open file. You should implement &#8220;mode&#8221; argument, which can be:
 &#8220;rb&#8221;, &#8220;wb&#8221;, &#8220;ab&#8221; (read, write, append. all binary). Return type depends
 on implementation, anyway the only place you need this file-object
@@ -69,8 +74,8 @@ is in your implementation of read, write and close</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to create</li>
-<li><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; specifies the mode in which the file is opened (&#8220;rb&#8221;,
+<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to create</li>
+<li><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; specifies the mode in which the file is opened (&#8220;rb&#8221;,
 &#8220;wb&#8221;, &#8220;ab&#8221;, &#8220;r+b&#8221; (read, write, append, read/write, all binary))</li>
 </ul>
 </td>
@@ -85,7 +90,7 @@ is in your implementation of read, write and close</p>
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.close">
 <code class="descname">close</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.close" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Close file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -100,15 +105,15 @@ is in your implementation of read, write and close</p>
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.exists">
 <code class="descname">exists</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.exists" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Check if path exists</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -117,15 +122,15 @@ is in your implementation of read, write and close</p>
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.is_dir">
 <code class="descname">is_dir</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.is_dir" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Check if path is directory</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -134,15 +139,15 @@ is in your implementation of read, write and close</p>
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.is_file">
 <code class="descname">is_file</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.is_file" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Check if path is file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -158,19 +163,19 @@ for <a class="reference internal" href="common_api.html#aioftp.AbstractAsyncList
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to list</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to list</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="common_api.html#aioftp.AbstractAsyncLister" title="aioftp.AbstractAsyncLister"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractAsyncLister</span></code></a></td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pathio</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="c"># do</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pathio</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="c1"># do</span>
 </pre></div>
 </div>
-<p>or borring instance of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">paths</span> <span class="o">=</span> <span class="n">await</span> <span class="n">pathio</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<p>or borring instance of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">paths</span> <span class="o">=</span> <span class="k">await</span> <span class="n">pathio</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">paths</span>
 <span class="go">[path, path, path, ...]</span>
 </pre></div>
@@ -180,15 +185,15 @@ for <a class="reference internal" href="common_api.html#aioftp.AbstractAsyncList
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.mkdir">
 <code class="descname">mkdir</code><span class="sig-paren">(</span><em>path</em>, <em>*</em>, <em>parents=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.mkdir" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Make directory</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to create</li>
-<li><strong>parents</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; create parents is does not exists</li>
+<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to create</li>
+<li><strong>parents</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; create parents is does not exists</li>
 </ul>
 </td>
 </tr>
@@ -214,7 +219,7 @@ parameters passed to <a class="reference internal" href="#aioftp.AbstractPathIO.
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.read">
 <code class="descname">read</code><span class="sig-paren">(</span><em>file</em>, <em>block_size</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.read" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Read some data from file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -222,11 +227,11 @@ parameters passed to <a class="reference internal" href="#aioftp.AbstractPathIO.
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>file</strong> &#8211; file-object from <a class="reference internal" href="#aioftp.AbstractPathIO.open" title="aioftp.AbstractPathIO.open"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractPathIO.open</span></code></a></li>
-<li><strong>block_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; bytes count to read</li>
+<li><strong>block_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; bytes count to read</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a></p>
 </td>
 </tr>
 </tbody>
@@ -236,15 +241,15 @@ parameters passed to <a class="reference internal" href="#aioftp.AbstractPathIO.
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.rename">
 <code class="descname">rename</code><span class="sig-paren">(</span><em>source</em>, <em>destination</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.rename" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Rename path</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; rename from</li>
-<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; rename to</li>
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; rename from</li>
+<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; rename to</li>
 </ul>
 </td>
 </tr>
@@ -255,13 +260,13 @@ parameters passed to <a class="reference internal" href="#aioftp.AbstractPathIO.
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.rmdir">
 <code class="descname">rmdir</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.rmdir" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Remove directory</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to remove</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to remove</td>
 </tr>
 </tbody>
 </table>
@@ -270,17 +275,17 @@ parameters passed to <a class="reference internal" href="#aioftp.AbstractPathIO.
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.seek">
 <code class="descname">seek</code><span class="sig-paren">(</span><em>file</em>, <em>offset</em>, <em>whence=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.seek" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Change the stream position to the given byte <cite>offset</cite>. Same behaviour
-as <a class="reference external" href="https://docs.python.org/3/library/io.html#io.IOBase.seek" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">io.IOBase.seek()</span></code></a></p>
+as <a class="reference external" href="https://docs.python.org/3/library/io.html#io.IOBase.seek" title="(in Python v3.6)"><code class="xref py py-meth docutils literal"><span class="pre">io.IOBase.seek()</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>file</strong> &#8211; file-object from <a class="reference internal" href="#aioftp.AbstractPathIO.open" title="aioftp.AbstractPathIO.open"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractPathIO.open</span></code></a></li>
-<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; relative byte offset</li>
-<li><strong>whence</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; base position for offset</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; relative byte offset</li>
+<li><strong>whence</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; base position for offset</li>
 </ul>
 </td>
 </tr>
@@ -291,18 +296,18 @@ as <a class="reference external" href="https://docs.python.org/3/library/io.html
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.stat">
 <code class="descname">stat</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.stat" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Get path stats</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path, which stats need</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path, which stats need</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">path stats. For proper work you need only this stats:
 st_size, st_mtime, st_ctime, st_nlink, st_mode</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">same as <a class="reference external" href="https://docs.python.org/3/library/os.html#os.stat_result" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">os.stat_result</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">same as <a class="reference external" href="https://docs.python.org/3/library/os.html#os.stat_result" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">os.stat_result</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -311,13 +316,13 @@ st_size, st_mtime, st_ctime, st_nlink, st_mode</td>
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.unlink">
 <code class="descname">unlink</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.unlink" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Remove file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to remove</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; path to remove</td>
 </tr>
 </tbody>
 </table>
@@ -326,7 +331,7 @@ st_size, st_mtime, st_ctime, st_nlink, st_mode</td>
 <dl class="method">
 <dt id="aioftp.AbstractPathIO.write">
 <code class="descname">write</code><span class="sig-paren">(</span><em>file</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractPathIO.write" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Write some data to file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -334,7 +339,7 @@ st_size, st_mtime, st_ctime, st_nlink, st_mode</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>file</strong> &#8211; file-object from <a class="reference internal" href="#aioftp.AbstractPathIO.open" title="aioftp.AbstractPathIO.open"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractPathIO.open</span></code></a></li>
-<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>) &#8211; data to write</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>) &#8211; data to write</li>
 </ul>
 </td>
 </tr>
@@ -349,18 +354,18 @@ st_size, st_mtime, st_ctime, st_nlink, st_mode</td>
 <em class="property">class </em><code class="descclassname">aioftp.pathio.</code><code class="descname">AsyncPathIOContext</code><span class="sig-paren">(</span><em>pathio</em>, <em>args</em>, <em>kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.pathio.AsyncPathIOContext" title="Permalink to this definition">¶</a></dt>
 <dd><p>Async pathio context.</p>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">with</span> <span class="n">pathio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_in</span><span class="p">:</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">with</span> <span class="n">pathio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_in</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="n">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">file_in</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">file_in</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
 <span class="gp">...</span>
-<span class="gp">... </span>        <span class="c"># do</span>
+<span class="gp">... </span>        <span class="c1"># do</span>
 </pre></div>
 </div>
 <p>or borring:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">file</span> <span class="o">=</span> <span class="n">await</span> <span class="n">pathio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="gp">... </span><span class="n">data</span> <span class="o">=</span> <span class="n">await</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-<span class="gp">... </span><span class="n">await</span> <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="gp">... </span><span class="n">await</span> <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">file</span> <span class="o">=</span> <span class="k">await</span> <span class="n">pathio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="gp">... </span><span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">await</span> <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">await</span> <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -377,7 +382,7 @@ st_size, st_mtime, st_ctime, st_nlink, st_mode</td>
 <dt id="aioftp.PathIO">
 <em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">PathIO</code><span class="sig-paren">(</span><em>timeout=None</em>, <em>loop=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.PathIO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aioftp.pathio.AbstractPathIO</span></code></p>
-<p>Blocking path io. Directly based on <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a> methods.</p>
+<p>Blocking path io. Directly based on <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a> methods.</p>
 </dd></dl>
 
 <dl class="class">
@@ -385,8 +390,8 @@ st_size, st_mtime, st_ctime, st_nlink, st_mode</td>
 <em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">AsyncPathIO</code><span class="sig-paren">(</span><em>timeout=None</em>, <em>loop=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AsyncPathIO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aioftp.pathio.AbstractPathIO</span></code></p>
 <p>Non-blocking path io. Based on
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.run_in_executor" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.run_in_executor()</span></code></a> and
-<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a> methods. It&#8217;s really slow, so it&#8217;s better to avoid
+<code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.run_in_executor()</span></code> and
+<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a> methods. It&#8217;s really slow, so it&#8217;s better to avoid
 usage of this path io layer.</p>
 </dd></dl>
 
@@ -400,16 +405,16 @@ and probably not so fast as it can be.</p>
 
 <dl class="class">
 <dt id="aioftp.PathIOError">
-<em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">PathIOError</code><span class="sig-paren">(</span><em>*args</em>, <em>reason=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.PathIOError" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">PathIOError</code><span class="sig-paren">(</span><em>*args</em>, <em>*</em>, <em>reason=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.PathIOError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Universal exception for any path io errors.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="c"># some client/server path operation</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="c1"># some client/server path operation</span>
 <span class="gp">... </span><span class="k">except</span> <span class="n">PathIOError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span> <span class="o">=</span> <span class="n">exc</span><span class="o">.</span><span class="n">reason</span>
 <span class="gp">... </span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">SomeException</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="c"># handle</span>
+<span class="gp">... </span>        <span class="c1"># handle</span>
 <span class="gp">... </span>    <span class="k">elif</span> <span class="o">...</span>
-<span class="gp">... </span>        <span class="c"># handle</span>
+<span class="gp">... </span>        <span class="c1"># handle</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -442,14 +447,11 @@ and probably not so fast as it can be.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -457,11 +459,11 @@ and probably not so fast as it can be.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2015, pohmelie.
+      &copy;2016, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
       <a href="_sources/path_io_api.txt"

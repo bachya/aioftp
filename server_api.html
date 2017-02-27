@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Server API &mdash; aioftp 0.6.1 documentation</title>
+    <title>Server API &#8212; aioftp 0.6.2 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.6.1',
+        VERSION:     '0.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,20 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.6.1 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="aioftp 0.6.2 documentation" href="index.html" />
     <link rel="next" title="Common API" href="common_api.html" />
     <link rel="prev" title="Client API" href="client_api.html" />
    
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">  
+  <body role="document">
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -51,28 +56,28 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>users</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> of
+<li><strong>users</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> of
 <a class="reference internal" href="#aioftp.User" title="aioftp.User"><code class="xref py py-class docutils literal"><span class="pre">aioftp.User</span></code></a> or instance of
 <a class="reference internal" href="#aioftp.AbstractUserManager" title="aioftp.AbstractUserManager"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractUserManager</span></code></a> subclass) &#8211; list of users or user manager object</li>
-<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use for creating connection and binding with streams</li>
-<li><strong>block_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; bytes count for socket read operations</li>
-<li><strong>socket_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
+<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use for creating connection and binding with streams</li>
+<li><strong>block_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; bytes count for socket read operations</li>
+<li><strong>socket_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
 <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; timeout for socket read and write operations</li>
-<li><strong>idle_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
+<li><strong>idle_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
 <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; timeout for socket read operations, another
 words: how long user can keep silence without sending commands</li>
-<li><strong>wait_future_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
+<li><strong>wait_future_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
 <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; wait for data connection to establish</li>
-<li><strong>path_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
+<li><strong>path_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
 <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; timeout for path-related operations (make directory,
 unlink file, etc.)</li>
 <li><strong>path_io_factory</strong> (<a class="reference internal" href="path_io_api.html#aioftp.AbstractPathIO" title="aioftp.AbstractPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractPathIO</span></code></a>) &#8211; factory of «path abstract layer»</li>
-<li><strong>maximum_connections</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; Maximum command connections per server</li>
-<li><strong>read_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; server read speed limit in bytes per second</li>
-<li><strong>write_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; server write speed limit in bytes per second</li>
-<li><strong>read_speed_limit_per_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; server read speed limit per
+<li><strong>maximum_connections</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; Maximum command connections per server</li>
+<li><strong>read_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; server read speed limit in bytes per second</li>
+<li><strong>write_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; server write speed limit in bytes per second</li>
+<li><strong>read_speed_limit_per_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; server read speed limit per
 connection in bytes per second</li>
-<li><strong>write_speed_limit_per_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; server write speed limit per
+<li><strong>write_speed_limit_per_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; server write speed limit per
 connection in bytes per second</li>
 <li><strong>data_ports</strong> (<code class="xref py py-class docutils literal"><span class="pre">collections.Iterable</span></code> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; port numbers that are available for passive connections</li>
 </ul>
@@ -90,17 +95,17 @@ connection in bytes per second</li>
 <dl class="method">
 <dt id="aioftp.Server.start">
 <code class="descname">start</code><span class="sig-paren">(</span><em>host=None</em>, <em>port=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Server.start" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Start server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; ip address to bind for listening.</li>
-<li><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; port number to bind for listening.</li>
+<li><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; ip address to bind for listening.</li>
+<li><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; port number to bind for listening.</li>
 <li><strong>kwargs</strong> &#8211; keyword arguments, they passed to
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.start_server" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.start_server()</span></code></a></li>
+<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.start_server" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.start_server()</span></code></a></li>
 </ul>
 </td>
 </tr>
@@ -111,7 +116,7 @@ connection in bytes per second</li>
 <dl class="method">
 <dt id="aioftp.Server.wait_closed">
 <code class="descname">wait_closed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Server.wait_closed" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Wait server to stop.</p>
 </dd></dl>
 
@@ -122,8 +127,8 @@ connection in bytes per second</li>
 <code class="descclassname">aioftp.server.</code><code class="descname">worker</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.server.worker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator. Abortable worker. If wrapped task will be cancelled by
 dispatcher, decorator will send ftp codes of successful interrupt.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nd">@worker</span>
-<span class="gp">... </span><span class="n">async</span> <span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">rest</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@worker</span>
+<span class="gp">... </span><span class="k">async</span> <span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">rest</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="o">...</span>
 </pre></div>
 </div>
@@ -138,19 +143,19 @@ dispatcher, decorator will send ftp codes of successful interrupt.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>login</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; user login</li>
-<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; user password</li>
-<li><strong>base_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; real user path for file io operations</li>
-<li><strong>home_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; virtual user path for client representation (must be
+<li><strong>login</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; user login</li>
+<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; user password</li>
+<li><strong>base_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; real user path for file io operations</li>
+<li><strong>home_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; virtual user path for client representation (must be
 absolute)</li>
-<li><strong>permissions</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> of
+<li><strong>permissions</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> of
 <a class="reference internal" href="#aioftp.Permission" title="aioftp.Permission"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Permission</span></code></a>) &#8211; list of path permissions</li>
-<li><strong>maximum_connections</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; Maximum connections per user</li>
-<li><strong>read_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; read speed limit per user in bytes per second</li>
-<li><strong>write_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; write speed limit per user in bytes per second</li>
-<li><strong>read_speed_limit_per_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; read speed limit per user
+<li><strong>maximum_connections</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; Maximum connections per user</li>
+<li><strong>read_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; read speed limit per user in bytes per second</li>
+<li><strong>write_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; write speed limit per user in bytes per second</li>
+<li><strong>read_speed_limit_per_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; read speed limit per user
 connection in bytes per second</li>
-<li><strong>write_speed_limit_per_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; write speed limit per user
+<li><strong>write_speed_limit_per_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; write speed limit per user
 connection in bytes per second</li>
 </ul>
 </td>
@@ -165,7 +170,7 @@ connection in bytes per second</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path which permission you want to know</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path which permission you want to know</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#aioftp.Permission" title="aioftp.Permission"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Permission</span></code></a></td>
 </tr>
@@ -184,9 +189,9 @@ connection in bytes per second</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path</li>
-<li><strong>readable</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; is readable</li>
-<li><strong>writable</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; is writable</li>
+<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path</li>
+<li><strong>readable</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; is readable</li>
+<li><strong>writable</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; is writable</li>
 </ul>
 </td>
 </tr>
@@ -203,8 +208,8 @@ connection in bytes per second</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; timeout used by <cite>with_timeout</cite> decorator</li>
-<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use</li>
+<li><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; timeout used by <cite>with_timeout</cite> decorator</li>
+<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use</li>
 </ul>
 </td>
 </tr>
@@ -213,7 +218,7 @@ connection in bytes per second</li>
 <dl class="method">
 <dt id="aioftp.AbstractUserManager.authenticate">
 <code class="descname">authenticate</code><span class="sig-paren">(</span><em>user</em>, <em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractUserManager.authenticate" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Check if user can be authenticated with provided password</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -221,11 +226,11 @@ connection in bytes per second</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>user</strong> (<a class="reference internal" href="#aioftp.User" title="aioftp.User"><code class="xref py py-class docutils literal"><span class="pre">aioftp.User</span></code></a>) &#8211; user</li>
-<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; password</li>
+<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; password</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></p>
 </td>
 </tr>
 </tbody>
@@ -235,13 +240,13 @@ connection in bytes per second</li>
 <dl class="method">
 <dt id="aioftp.AbstractUserManager.get_user">
 <code class="descname">get_user</code><span class="sig-paren">(</span><em>login</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractUserManager.get_user" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Get user and response for USER call</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>login</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; user&#8217;s login</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>login</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; user&#8217;s login</td>
 </tr>
 </tbody>
 </table>
@@ -250,7 +255,7 @@ connection in bytes per second</li>
 <dl class="method">
 <dt id="aioftp.AbstractUserManager.notify_logout">
 <code class="descname">notify_logout</code><span class="sig-paren">(</span><em>user</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractUserManager.notify_logout" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Called when user connection is closed if user was initiated</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -272,7 +277,7 @@ connection in bytes per second</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>users</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a>, etc. of
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>users</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a>, etc. of
 <a class="reference internal" href="#aioftp.User" title="aioftp.User"><code class="xref py py-class docutils literal"><span class="pre">aioftp.User</span></code></a>) &#8211; container of users</td>
 </tr>
 </tbody>
@@ -282,7 +287,7 @@ connection in bytes per second</li>
 <dl class="class">
 <dt id="aioftp.Connection">
 <em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">Connection</code><span class="sig-paren">(</span><em>*</em>, <em>loop=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Connection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">collections.defaultdict</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">collections.defaultdict</span></code></a></p>
 <p>Connection state container for transparent work with futures for async
 wait</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -290,40 +295,38 @@ wait</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; event loop</li>
+<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; event loop</li>
 <li><strong>kwargs</strong> &#8211; initialization parameters</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Container based on <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">collections.defaultdict</span></code></a>, which holds
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.Future" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.Future</span></code></a> as default factory. There is two layers of
+<p>Container based on <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">collections.defaultdict</span></code></a>, which holds
+<a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.Future" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.Future</span></code></a> as default factory. There is two layers of
 abstraction:</p>
-<ul>
+<ul class="simple">
 <li><dl class="first docutils">
 <dt>Low level based on simple dictionary keys to attributes mapping and</dt>
-<dd><p class="first last">available at Connection.future.</p>
-</dd>
+<dd>available at Connection.future.</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>High level based on futures result and dictionary keys to attributes</dt>
-<dd><p class="first last">mapping and available at Connection.</p>
-</dd>
+<dd>mapping and available at Connection.</dd>
 </dl>
 </li>
 </ul>
 <p>To clarify, here is groups of equal expressions</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">connection</span><span class="o">.</span><span class="n">future</span><span class="o">.</span><span class="n">foo</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">connection</span><span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">connection</span><span class="o">.</span><span class="n">future</span><span class="o">.</span><span class="n">foo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">connection</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">]</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">connection</span><span class="o">.</span><span class="n">foo</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">connection</span><span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">connection</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">connection</span><span class="o">.</span><span class="n">future</span><span class="o">.</span><span class="n">foo</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">connection</span><span class="o">.</span><span class="n">foo</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">connection</span><span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">connection</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -337,7 +340,7 @@ crossing. If value is <code class="xref py py-class docutils literal"><span clas
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; </td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; </td>
 </tr>
 </tbody>
 </table>
@@ -355,7 +358,7 @@ crossing. If value is <code class="xref py py-class docutils literal"><span clas
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -371,7 +374,7 @@ crossing. If value is <code class="xref py py-class docutils literal"><span clas
 
 <dl class="class">
 <dt id="aioftp.ConnectionConditions">
-<em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">ConnectionConditions</code><span class="sig-paren">(</span><em>*fields</em>, <em>wait=False</em>, <em>fail_code='503'</em>, <em>fail_info=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.ConnectionConditions" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">ConnectionConditions</code><span class="sig-paren">(</span><em>*fields</em>, <em>*</em>, <em>wait=False</em>, <em>fail_code='503'</em>, <em>fail_info=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.ConnectionConditions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator for checking <cite>connection</cite> keys for existence or wait for them.
 Available options:</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -393,21 +396,21 @@ incomming connection</li>
 key, user already tell filename for rename</li>
 </ul>
 </li>
-<li><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; Indicates if should wait for parameters for
+<li><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; Indicates if should wait for parameters for
 <cite>connection.wait_future_timeout</cite></li>
-<li><strong>fail_code</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; return code if failure</li>
-<li><strong>fail_info</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; return information string if failure. If
+<li><strong>fail_code</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; return code if failure</li>
+<li><strong>fail_info</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; return information string if failure. If
 <code class="xref py py-class docutils literal"><span class="pre">None</span></code>, then use default string</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nd">@ConnectionConditions</span><span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@ConnectionConditions</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">ConnectionConditions</span><span class="o">.</span><span class="n">login_required</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">ConnectionConditions</span><span class="o">.</span><span class="n">passive_server_started</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">ConnectionConditions</span><span class="o">.</span><span class="n">data_connection_made</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">wait</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">... </span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">rest</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="o">...</span>
 </pre></div>
@@ -424,7 +427,7 @@ key, user already tell filename for rename</li>
 <li><cite>path_must_be_dir</cite></li>
 <li><cite>path_must_be_file</cite></li>
 </ul>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nd">@PathConditions</span><span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@PathConditions</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">PathConditions</span><span class="o">.</span><span class="n">path_must_exists</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">PathConditions</span><span class="o">.</span><span class="n">path_must_be_dir</span><span class="p">)</span>
 <span class="gp">... </span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
@@ -444,7 +447,7 @@ now:</p>
 </ul>
 <p>Decorator will check the permissions and return proper code and information
 to client if permission denied</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nd">@PathPermissions</span><span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@PathPermissions</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">PathPermissions</span><span class="o">.</span><span class="n">readable</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">PathPermissions</span><span class="o">.</span><span class="n">writable</span><span class="p">)</span>
 <span class="gp">... </span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
@@ -482,14 +485,11 @@ to client if permission denied</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -500,8 +500,8 @@ to client if permission denied</p>
       &copy;2016, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
       <a href="_sources/server_api.txt"

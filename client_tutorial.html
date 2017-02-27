@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Client tutorial &mdash; aioftp 0.6.0 documentation</title>
+    <title>Client tutorial &#8212; aioftp 0.6.2 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.6.0',
+        VERSION:     '0.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,20 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.6.0 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="aioftp 0.6.2 documentation" href="index.html" />
     <link rel="next" title="Server tutorial" href="server_tutorial.html" />
     <link rel="prev" title="aioftp" href="index.html" />
    
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">  
+  <body role="document">
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -48,15 +53,15 @@ lets start!</p>
 <p>Firstly you should create <a class="reference internal" href="client_api.html#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a> instance and connect to host</p>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.connect" title="aioftp.Client.connect"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.connect()</span></code></a></p>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.login" title="aioftp.Client.login"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.login()</span></code></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&quot;ftp.server.com&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">&quot;user&quot;</span><span class="p">,</span> <span class="s">&quot;pass&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;ftp.server.com&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;pass&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Or just use <a class="reference internal" href="client_api.html#aioftp.ClientSession" title="aioftp.ClientSession"><code class="xref py py-class docutils literal"><span class="pre">aioftp.ClientSession</span></code></a> async context, which will connect,
 login and quit automatically</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="s">&quot;ftp.server.com&quot;</span><span class="p">,</span> <span class="s">&quot;user&quot;</span><span class="p">,</span> <span class="s">&quot;pass&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="c"># do</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="s2">&quot;ftp.server.com&quot;</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;pass&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="c1"># do</span>
 </pre></div>
 </div>
 </div>
@@ -68,64 +73,77 @@ upload/download file or directory. There is &#8220;source&#8221; and &#8220;dest
 you does not specify &#8220;destination&#8221;, then current working directory will be
 used as destination.</p>
 <p>Lets upload some file to current directory</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="s">&quot;test.py&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="s2">&quot;test.py&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you want specify new name, or different path to uploading/downloading path
 you should use &#8220;write_into&#8221; argument, which works for directory as well</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="s">&quot;test.py&quot;</span><span class="p">,</span> <span class="s">&quot;tmp/test.py&quot;</span><span class="p">,</span> <span class="n">write_into</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="s">&quot;folder1&quot;</span><span class="p">,</span> <span class="s">&quot;folder2&quot;</span><span class="p">,</span> <span class="n">write_into</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="s2">&quot;test.py&quot;</span><span class="p">,</span> <span class="s2">&quot;tmp/test.py&quot;</span><span class="p">,</span> <span class="n">write_into</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="s2">&quot;folder1&quot;</span><span class="p">,</span> <span class="s2">&quot;folder2&quot;</span><span class="p">,</span> <span class="n">write_into</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>After that you get</p>
-<div class="highlight-python"><div class="highlight"><pre>tmp/test.py
-folder2/*content of folder1*
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tmp</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<span class="n">folder2</span><span class="o">/*</span><span class="n">content</span> <span class="n">of</span> <span class="n">folder1</span><span class="o">*</span>
 </pre></div>
 </div>
 <p>If you will not use &#8220;write_into&#8221;, you will get something you probably did not
 expect</p>
-<div class="highlight-python"><div class="highlight"><pre>tmp/test.py/test.py
-folder2/folder1/*content of folder1*
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tmp</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<span class="n">folder2</span><span class="o">/</span><span class="n">folder1</span><span class="o">/*</span><span class="n">content</span> <span class="n">of</span> <span class="n">folder1</span><span class="o">*</span>
 </pre></div>
 </div>
 <p>Or you can upload path as is and then rename it
 (<a class="reference internal" href="client_api.html#aioftp.Client.rename" title="aioftp.Client.rename"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.rename()</span></code></a>)</p>
 <p>Downloading is pretty same</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s">&quot;tmp/test.py&quot;</span><span class="p">,</span> <span class="s">&quot;foo.py&quot;</span><span class="p">,</span> <span class="n">write_into</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s">&quot;folder2&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;tmp/test.py&quot;</span><span class="p">,</span> <span class="s2">&quot;foo.py&quot;</span><span class="p">,</span> <span class="n">write_into</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;folder2&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="listing-paths">
 <h2>Listing paths<a class="headerlink" href="#listing-paths" title="Permalink to this headline">¶</a></h2>
 <p>For listing paths you should use <a class="reference internal" href="client_api.html#aioftp.Client.list" title="aioftp.Client.list"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.list()</span></code></a> coroutine, which
-can list paths recursively and produce a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> and can be used
+can list paths recursively and produce a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> and can be used
 with <cite>async for</cite></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
 <span class="go">[(PosixPath(&#39;/.logs&#39;), {&#39;unix.mode&#39;: &#39;0755&#39;, &#39;unique&#39;: &#39;801g4804045&#39;, ...</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">[(PosixPath(&#39;/.logs&#39;), {&#39;unix.mode&#39;: &#39;0755&#39;, &#39;unique&#39;: &#39;801g4804045&#39;, ...</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="go">(PosixPath(&#39;/.logs&#39;), {&#39;unix.mode&#39;: &#39;0755&#39;, &#39;unique&#39;: &#39;801g4804045&#39;, ...</span>
 </pre></div>
 </div>
 <p>If you ommit path argument, result will be list for current working directory</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">c</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">c</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 <span class="go">[(PosixPath(&#39;test.py&#39;), {&#39;unique&#39;: &#39;801g480a508&#39;, &#39;size&#39;: &#39;3102&#39;, ...</span>
+</pre></div>
+</div>
+<p>In case of <cite>async for</cite> be careful, since asynchronous variation of list is lazy.
+It means, that until you leave <cite>async for</cite> block you can&#8217;t interact with server.
+If you need list and interact with server you should use eager version of list:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="p">(</span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">()):</span>
+<span class="gp">... </span>    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you want to mix lazy <cite>list</cite> and client interaction, you can create two client
+connections to server:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">client1</span><span class="o">.</span><span class="n">list</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">await</span> <span class="n">client2</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="getting-path-stats">
 <h2>Getting path stats<a class="headerlink" href="#getting-path-stats" title="Permalink to this headline">¶</a></h2>
 <p>When you need get some path stats you should use <a class="reference internal" href="client_api.html#aioftp.Client.stat" title="aioftp.Client.stat"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.stat()</span></code></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s">&quot;tmp2.py&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s2">&quot;tmp2.py&quot;</span><span class="p">)</span>
 <span class="go">{&#39;size&#39;: &#39;909&#39;, &#39;create&#39;: &#39;1445437246.4320722&#39;, &#39;type&#39;: &#39;file&#39;, ...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s">&quot;.git&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s2">&quot;.git&quot;</span><span class="p">)</span>
 <span class="go">{&#39;create&#39;: &#39;1445435702.6441028&#39;, &#39;type&#39;: &#39;dir&#39;, &#39;size&#39;: &#39;4096&#39;, ...</span>
 </pre></div>
 </div>
@@ -135,15 +153,15 @@ with <cite>async for</cite></p>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.is_dir" title="aioftp.Client.is_dir"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.is_dir()</span></code></a></p>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.exists" title="aioftp.Client.exists"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.exists()</span></code></a></p>
 </div></blockquote>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">is_file</span><span class="p">(</span><span class="s">&quot;/public_html&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">is_file</span><span class="p">(</span><span class="s2">&quot;/public_html&quot;</span><span class="p">)</span>
 <span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(</span><span class="s">&quot;/public_html&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(</span><span class="s2">&quot;/public_html&quot;</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">is_file</span><span class="p">(</span><span class="s">&quot;test.py&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">is_file</span><span class="p">(</span><span class="s2">&quot;test.py&quot;</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;test.py&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;test.py&quot;</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;naked-guido.png&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;naked-guido.png&quot;</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
@@ -153,8 +171,8 @@ with <cite>async for</cite></p>
 <p>For removing paths you have universal coroutine <a class="reference internal" href="client_api.html#aioftp.Client.remove" title="aioftp.Client.remove"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.remove()</span></code></a>
 which can remove file or directory recursive. So, you don&#8217;t need to do borring
 checks.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&quot;tmp.py&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&quot;folder1&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;tmp.py&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;folder1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -164,17 +182,17 @@ checks.</p>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.get_current_directory" title="aioftp.Client.get_current_directory"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.get_current_directory()</span></code></a></p>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.change_directory" title="aioftp.Client.change_directory"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.change_directory()</span></code></a></p>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.make_directory" title="aioftp.Client.make_directory"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.make_directory()</span></code></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_current_directory</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_current_directory</span><span class="p">()</span>
 <span class="go">PosixPath(&#39;/public_html&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">change_directory</span><span class="p">(</span><span class="s">&quot;folder1&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_current_directory</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">change_directory</span><span class="p">(</span><span class="s2">&quot;folder1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_current_directory</span><span class="p">()</span>
 <span class="go">PosixPath(&#39;/public_html/folder1&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">change_directory</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_current_directory</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">change_directory</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_current_directory</span><span class="p">()</span>
 <span class="go">PosixPath(&#39;/public_html&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">make_directory</span><span class="p">(</span><span class="s">&quot;folder2&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">change_directory</span><span class="p">(</span><span class="s">&quot;folder2&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_current_directory</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">make_directory</span><span class="p">(</span><span class="s2">&quot;folder2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">change_directory</span><span class="p">(</span><span class="s2">&quot;folder2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_current_directory</span><span class="p">()</span>
 <span class="go">PosixPath(&#39;/public_html/folder2&#39;)</span>
 </pre></div>
 </div>
@@ -182,10 +200,10 @@ checks.</p>
 <div class="section" id="rename-move-path">
 <h2>Rename (move) path<a class="headerlink" href="#rename-move-path" title="Permalink to this headline">¶</a></h2>
 <p>To change name (move) file or directory use <a class="reference internal" href="client_api.html#aioftp.Client.rename" title="aioftp.Client.rename"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.rename()</span></code></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 <span class="go">[(PosixPath(&#39;test.py&#39;), {&#39;modify&#39;: &#39;20150423090041&#39;, &#39;type&#39;: &#39;file&#39;, ...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s">&quot;test.py&quot;</span><span class="p">,</span> <span class="s">&quot;foo.py&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;test.py&quot;</span><span class="p">,</span> <span class="s2">&quot;foo.py&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 <span class="go">[(PosixPath(&#39;foo.py&#39;), {&#39;modify&#39;: &#39;20150423090041&#39;, &#39;type&#39;: &#39;file&#39;, ...</span>
 </pre></div>
 </div>
@@ -194,7 +212,7 @@ checks.</p>
 <h2>Closing connection<a class="headerlink" href="#closing-connection" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="client_api.html#aioftp.Client.quit" title="aioftp.Client.quit"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.quit()</span></code></a> coroutine will send &#8220;QUIT&#8221; ftp command and close
 connection.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -209,70 +227,70 @@ to upload it to file system on ftp server, then you should use
 <a class="reference internal" href="client_api.html#aioftp.Client.get_stream" title="aioftp.Client.get_stream"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.get_stream()</span></code></a>, which return
 <a class="reference internal" href="client_api.html#aioftp.DataConnectionThrottleStreamIO" title="aioftp.DataConnectionThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.DataConnectionThrottleStreamIO</span></code></a>. The common pattern to
 work with streams is:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">download_stream</span><span class="p">(</span><span class="s">&quot;tmp.py&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">download_stream</span><span class="p">(</span><span class="s2">&quot;tmp.py&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="n">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">():</span>
 <span class="gp">...</span>
-<span class="gp">... </span>        <span class="c"># do something with data</span>
+<span class="gp">... </span>        <span class="c1"># do something with data</span>
 </pre></div>
 </div>
 <p>Or, if you want to abort transfer at some point</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">stream</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">download_stream</span><span class="p">(</span><span class="s">&quot;tmp.py&quot;</span><span class="p">)</span>
-<span class="gp">... </span><span class="n">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">():</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">download_stream</span><span class="p">(</span><span class="s2">&quot;tmp.py&quot;</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">():</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="c"># do something with data</span>
+<span class="gp">... </span>    <span class="c1"># do something with data</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="k">if</span> <span class="n">something_not_interesting</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>        <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">abort</span><span class="p">()</span>
+<span class="gp">... </span>        <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">abort</span><span class="p">()</span>
 <span class="gp">... </span>        <span class="n">stream</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="gp">... </span>        <span class="k">break</span>
 <span class="gp">...</span>
 <span class="gp">... </span><span class="k">else</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="n">await</span> <span class="n">stream</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="k">await</span> <span class="n">stream</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>For restarting upload/download at exact byte position (REST command) there is
 <cite>offset</cite> argument for <cite>*_stream</cite> methods:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">download_stream</span><span class="p">(</span><span class="s">&quot;tmp.py&quot;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">download_stream</span><span class="p">(</span><span class="s2">&quot;tmp.py&quot;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="n">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">():</span>
 <span class="gp">...</span>
-<span class="gp">... </span>        <span class="c"># do something with data</span>
+<span class="gp">... </span>        <span class="c1"># do something with data</span>
 </pre></div>
 </div>
 <p>Or if you want to restore upload/download process:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="k">try</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>        <span class="n">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="n">HOST</span><span class="p">,</span> <span class="n">PORT</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>            <span class="k">if</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="gp">... </span>            <span class="k">if</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
 <span class="gp">...</span>
-<span class="gp">... </span>                <span class="n">stat</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="gp">... </span>                <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stat</span><span class="p">[</span><span class="s">&quot;size&quot;</span><span class="p">])</span>
+<span class="gp">... </span>                <span class="n">stat</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="gp">... </span>                <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stat</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">])</span>
 <span class="gp">...</span>
 <span class="gp">... </span>            <span class="k">else</span><span class="p">:</span>
 <span class="gp">...</span>
 <span class="gp">... </span>                <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="gp">...</span>
 <span class="gp">... </span>            <span class="n">file_in</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-<span class="gp">... </span>            <span class="n">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">upload_stream</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">size</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="k">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">upload_stream</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">size</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>                <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="gp">... </span>                <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <span class="gp">...</span>
 <span class="gp">... </span>                    <span class="n">data</span> <span class="o">=</span> <span class="n">file_in</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">block_size</span><span class="p">)</span>
 <span class="gp">... </span>                    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
 <span class="gp">...</span>
 <span class="gp">... </span>                        <span class="k">break</span>
 <span class="gp">...</span>
-<span class="gp">... </span>                    <span class="n">await</span> <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">... </span>                    <span class="k">await</span> <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="gp">... </span>        <span class="k">break</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="k">except</span> <span class="n">ConnectionResetError</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">except</span> <span class="ne">ConnectionResetError</span><span class="p">:</span>
 <span class="gp">...</span>
 <span class="gp">... </span>        <span class="k">pass</span>
 </pre></div>
@@ -285,11 +303,11 @@ download + offset)</p>
 <h2>Throttle<a class="headerlink" href="#throttle" title="Permalink to this headline">¶</a></h2>
 <p>Client have two types of speed limit: <cite>read_speed_limit</cite> and
 <cite>write_speed_limit</cite>. Throttle can be set at initialization time:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">read_speed_limit</span><span class="o">=</span><span class="mi">100</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span>  <span class="c"># 100 Kib/s</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">read_speed_limit</span><span class="o">=</span><span class="mi">100</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span>  <span class="c1"># 100 Kib/s</span>
 </pre></div>
 </div>
 <p>And can be changed after creation:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">throttle</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">250</span> <span class="o">*</span> <span class="mi">1024</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">throttle</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">250</span> <span class="o">*</span> <span class="mi">1024</span>
 </pre></div>
 </div>
 </div>
@@ -300,14 +318,14 @@ download + offset)</p>
 <li><a class="reference internal" href="path_io_api.html#aioftp.PathIO" title="aioftp.PathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.PathIO</span></code></a> — blocking path operations</li>
 <li><a class="reference internal" href="path_io_api.html#aioftp.AsyncPathIO" title="aioftp.AsyncPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AsyncPathIO</span></code></a> — non-blocking path operations, this one is
 blocking ones just wrapped with
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.run_in_executor" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.run_in_executor()</span></code></a>. It&#8217;s really slow, so it&#8217;s
+<code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.run_in_executor()</span></code>. It&#8217;s really slow, so it&#8217;s
 better to avoid usage of this path io layer.</li>
 <li><a class="reference internal" href="path_io_api.html#aioftp.MemoryPathIO" title="aioftp.MemoryPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.MemoryPathIO</span></code></a> — in-memory realization of file system, this
 one is just proof of concept and probably not too fast (as it can be).</li>
 </ul>
 <p>You can specify <cite>path_io_factory</cite> when creating <a class="reference internal" href="client_api.html#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a>
 instance. Default factory is <a class="reference internal" href="path_io_api.html#aioftp.PathIO" title="aioftp.PathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.PathIO</span></code></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">path_io_factory</span><span class="o">=</span><span class="n">pathio</span><span class="o">.</span><span class="n">MemoryPathIO</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">path_io_factory</span><span class="o">=</span><span class="n">pathio</span><span class="o">.</span><span class="n">MemoryPathIO</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -315,12 +333,12 @@ instance. Default factory is <a class="reference internal" href="path_io_api.htm
 <h2>Timeouts<a class="headerlink" href="#timeouts" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="client_api.html#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a> have <cite>socket_timeout</cite> argument, which you can use
 to specify global timeout for socket io operations.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">socket_timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c"># 1 second socket timeout</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">socket_timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 1 second socket timeout</span>
 </pre></div>
 </div>
 <p><a class="reference internal" href="client_api.html#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a> also have <cite>path_timeout</cite>, which is applied
 <strong>only for non-blocking path io layers</strong>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">path_timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">path_io_factory</span><span class="o">=</span><span class="n">pathio</span><span class="o">.</span><span class="n">AsyncPathIO</span>
 <span class="gp">... </span><span class="p">)</span>
@@ -332,14 +350,14 @@ to specify global timeout for socket io operations.</p>
 <p>Simplest way to use proxy is
 <a class="reference external" href="https://github.com/jvansteirteghem/twunnel3">twunnel3</a>. aioftp was designed
 with this library in mind.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">configuration</span> <span class="o">=</span> <span class="p">{</span>
-<span class="gp">... </span>    <span class="s">&quot;PROXY_SERVERS&quot;</span><span class="p">:</span> <span class="p">[</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">configuration</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s2">&quot;PROXY_SERVERS&quot;</span><span class="p">:</span> <span class="p">[</span>
 <span class="gp">... </span>        <span class="p">{</span>
-<span class="gp">... </span>            <span class="s">&quot;TYPE&quot;</span><span class="p">:</span> <span class="s">&quot;SOCKS4&quot;</span><span class="p">,</span>
-<span class="gp">... </span>            <span class="s">&quot;ADDRESS&quot;</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span><span class="p">,</span>
-<span class="gp">... </span>            <span class="s">&quot;PORT&quot;</span><span class="p">:</span> <span class="mi">9050</span><span class="p">,</span>
-<span class="gp">... </span>            <span class="s">&quot;ACCOUNT&quot;</span><span class="p">:</span> <span class="p">{</span>
-<span class="gp">... </span>                <span class="s">&quot;NAME&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+<span class="gp">... </span>            <span class="s2">&quot;TYPE&quot;</span><span class="p">:</span> <span class="s2">&quot;SOCKS4&quot;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="s2">&quot;ADDRESS&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="s2">&quot;PORT&quot;</span><span class="p">:</span> <span class="mi">9050</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="s2">&quot;ACCOUNT&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="gp">... </span>                <span class="s2">&quot;NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
 <span class="gp">... </span>            <span class="p">}</span>
 <span class="gp">... </span>        <span class="p">},</span>
 <span class="gp">... </span>    <span class="p">]</span>
@@ -351,7 +369,7 @@ with this library in mind.</p>
 </div>
 <div class="section" id="futher-reading">
 <h2>Futher reading<a class="headerlink" href="#futher-reading" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="client_api.html"><em>Client API</em></a></p>
+<p><a class="reference internal" href="client_api.html"><span class="doc">Client API</span></a></p>
 </div>
 </div>
 
@@ -403,14 +421,11 @@ with this library in mind.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -418,11 +433,11 @@ with this library in mind.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2015, pohmelie.
+      &copy;2016, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
       <a href="_sources/client_tutorial.txt"

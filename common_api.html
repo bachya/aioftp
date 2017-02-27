@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Common API &mdash; aioftp 0.6.1 documentation</title>
+    <title>Common API &#8212; aioftp 0.6.2 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.6.1',
+        VERSION:     '0.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,20 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.6.1 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="aioftp 0.6.2 documentation" href="index.html" />
     <link rel="next" title="Path abstraction layer API" href="path_io_api.html" />
     <link rel="prev" title="Server API" href="server_api.html" />
    
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">  
+  <body role="document">
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -50,14 +55,14 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>reader</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.StreamReader</span></code></a>) &#8211; stream reader</li>
-<li><strong>writer</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.StreamWriter</span></code></a>) &#8211; stream writer</li>
-<li><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; socket timeout for read/write operations</li>
-<li><strong>read_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; socket timeout for read operations, overrides
+<li><strong>reader</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.StreamReader</span></code></a>) &#8211; stream reader</li>
+<li><strong>writer</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.StreamWriter</span></code></a>) &#8211; stream writer</li>
+<li><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; socket timeout for read/write operations</li>
+<li><strong>read_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; socket timeout for read operations, overrides
 <cite>timeout</cite></li>
-<li><strong>write_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; socket timeout for write operations, overrides
+<li><strong>write_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; socket timeout for write operations, overrides
 <cite>timeout</cite></li>
-<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use for creating connection and binding with streams</li>
+<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use for creating connection and binding with streams</li>
 </ul>
 </td>
 </tr>
@@ -72,13 +77,13 @@
 <dl class="method">
 <dt id="aioftp.StreamIO.read">
 <code class="descname">read</code><span class="sig-paren">(</span><em>count=8192</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.StreamIO.read" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
-<p>Proxy for <a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader.read" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamReader.read()</span></code></a>.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<p>Proxy for <a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader.read" title="(in Python v3.6)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamReader.read()</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>count</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; block size for read operation</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>count</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; block size for read operation</td>
 </tr>
 </tbody>
 </table>
@@ -87,21 +92,21 @@
 <dl class="method">
 <dt id="aioftp.StreamIO.readline">
 <code class="descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.StreamIO.readline" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
-<p>Proxy for <a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader.readline" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamReader.readline()</span></code></a>.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<p>Proxy for <a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader.readline" title="(in Python v3.6)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamReader.readline()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aioftp.StreamIO.write">
 <code class="descname">write</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.StreamIO.write" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
-<p>Combination of <a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter.write" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamWriter.write()</span></code></a> and
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter.drain" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamWriter.drain()</span></code></a>.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<p>Combination of <a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter.write" title="(in Python v3.6)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamWriter.write()</span></code></a> and
+<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter.drain" title="(in Python v3.6)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamWriter.drain()</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>) &#8211; data to write</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>) &#8211; data to write</td>
 </tr>
 </tbody>
 </table>
@@ -118,9 +123,9 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use</li>
-<li><strong>limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; speed limit in bytes or <code class="xref py py-class docutils literal"><span class="pre">None</span></code> for unlimited</li>
-<li><strong>reset_rate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) &#8211; time in seconds for «round» throttle memory (to deal
+<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use</li>
+<li><strong>limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; speed limit in bytes or <code class="xref py py-class docutils literal"><span class="pre">None</span></code> for unlimited</li>
+<li><strong>reset_rate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) &#8211; time in seconds for «round» throttle memory (to deal
 with float precision when divide)</li>
 </ul>
 </td>
@@ -136,9 +141,9 @@ with float precision when divide)</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>) &#8211; bytes of data for count</li>
-<li><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) &#8211; start of read/write time from
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.time" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.time()</span></code></a></li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>) &#8211; bytes of data for count</li>
+<li><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) &#8211; start of read/write time from
+<code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.time()</span></code></li>
 </ul>
 </td>
 </tr>
@@ -161,7 +166,7 @@ with float precision when divide)</li>
 <dl class="method">
 <dt id="aioftp.Throttle.wait">
 <code class="descname">wait</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Throttle.wait" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Wait until can do IO</p>
 </dd></dl>
 
@@ -198,11 +203,11 @@ with float precision when divide)</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>read_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; stream read speed limit in bytes or
+<li><strong>read_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; stream read speed limit in bytes or
 <code class="xref py py-class docutils literal"><span class="pre">None</span></code> for unlimited</li>
-<li><strong>write_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; stream write speed limit in bytes or
+<li><strong>write_speed_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; stream write speed limit in bytes or
 <code class="xref py py-class docutils literal"><span class="pre">None</span></code> for unlimited</li>
-<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use</li>
+<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use</li>
 </ul>
 </td>
 </tr>
@@ -214,7 +219,7 @@ with float precision when divide)</li>
 
 <dl class="class">
 <dt id="aioftp.ThrottleStreamIO">
-<em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">ThrottleStreamIO</code><span class="sig-paren">(</span><em>*args</em>, <em>throttles={}</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.ThrottleStreamIO" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">ThrottleStreamIO</code><span class="sig-paren">(</span><em>*args</em>, <em>*</em>, <em>throttles={}</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.ThrottleStreamIO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aioftp.common.StreamIO</span></code></p>
 <p>Throttled <a class="reference internal" href="#aioftp.StreamIO" title="aioftp.StreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.StreamIO</span></code></a>. <cite>ThrottleStreamIO</cite> is subclass of
 <a class="reference internal" href="#aioftp.StreamIO" title="aioftp.StreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.StreamIO</span></code></a>. <cite>throttles</cite> attribute is dictionary of <cite>name</cite>:
@@ -228,17 +233,17 @@ with float precision when divide)</li>
 </li>
 <li><strong>**kwargs</strong> &#8211; <p>keyword arguments for <a class="reference internal" href="#aioftp.StreamIO" title="aioftp.StreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.StreamIO</span></code></a></p>
 </li>
-<li><strong>throttles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a> with <a class="reference internal" href="#aioftp.Throttle" title="aioftp.Throttle"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Throttle</span></code></a> values) &#8211; dictionary of throttles</li>
+<li><strong>throttles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a> with <a class="reference internal" href="#aioftp.Throttle" title="aioftp.Throttle"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Throttle</span></code></a> values) &#8211; dictionary of throttles</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">stream</span> <span class="o">=</span> <span class="n">ThrottleStreamIO</span><span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">stream</span> <span class="o">=</span> <span class="n">ThrottleStreamIO</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">reader</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">writer</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">throttles</span><span class="o">=</span><span class="p">{</span>
-<span class="gp">... </span>        <span class="s">&quot;main&quot;</span><span class="p">:</span> <span class="n">StreamThrottle</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="s2">&quot;main&quot;</span><span class="p">:</span> <span class="n">StreamThrottle</span><span class="p">(</span>
 <span class="gp">... </span>            <span class="n">read</span><span class="o">=</span><span class="n">Throttle</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>
 <span class="gp">... </span>            <span class="n">write</span><span class="o">=</span><span class="n">Throttle</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">)</span>
@@ -257,10 +262,10 @@ with float precision when divide)</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; name of throttle to append to (&#8220;read&#8221; or &#8220;write&#8221;)</li>
-<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>) &#8211; bytes of data for count</li>
-<li><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) &#8211; start of read/write time from
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.time" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.time()</span></code></a></li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; name of throttle to append to (&#8220;read&#8221; or &#8220;write&#8221;)</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>) &#8211; bytes of data for count</li>
+<li><strong>start</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) &#8211; start of read/write time from
+<code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.time()</span></code></li>
 </ul>
 </td>
 </tr>
@@ -280,7 +285,7 @@ with float precision when divide)</li>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">(</span><span class="n">block_size</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_block</span><span class="p">(</span><span class="n">block_size</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="o">...</span>
 </pre></div>
 </div>
@@ -298,7 +303,7 @@ with float precision when divide)</li>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_line</span><span class="p">():</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stream</span><span class="o">.</span><span class="n">iter_by_line</span><span class="p">():</span>
 <span class="gp">... </span>    <span class="o">...</span>
 </pre></div>
 </div>
@@ -307,27 +312,27 @@ with float precision when divide)</li>
 <dl class="method">
 <dt id="aioftp.ThrottleStreamIO.read">
 <code class="descname">read</code><span class="sig-paren">(</span><em>count=8192</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.ThrottleStreamIO.read" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p><a class="reference internal" href="#aioftp.StreamIO.read" title="aioftp.StreamIO.read"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.StreamIO.read()</span></code></a> proxy</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aioftp.ThrottleStreamIO.readline">
 <code class="descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.ThrottleStreamIO.readline" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p><a class="reference internal" href="#aioftp.StreamIO.readline" title="aioftp.StreamIO.readline"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.StreamIO.readline()</span></code></a> proxy</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aioftp.ThrottleStreamIO.wait">
 <code class="descname">wait</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.ThrottleStreamIO.wait" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Wait for all throttles</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; name of throttle to acquire (&#8220;read&#8221; or &#8220;write&#8221;)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; name of throttle to acquire (&#8220;read&#8221; or &#8220;write&#8221;)</td>
 </tr>
 </tbody>
 </table>
@@ -336,7 +341,7 @@ with float precision when divide)</li>
 <dl class="method">
 <dt id="aioftp.ThrottleStreamIO.write">
 <code class="descname">write</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.ThrottleStreamIO.write" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p><a class="reference internal" href="#aioftp.StreamIO.write" title="aioftp.StreamIO.write"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.StreamIO.write()</span></code></a> proxy</p>
 </dd></dl>
 
@@ -346,9 +351,9 @@ with float precision when divide)</li>
 <dt id="aioftp.AsyncListerMixin">
 <em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">AsyncListerMixin</code><a class="headerlink" href="#aioftp.AsyncListerMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add ability to <cite>async for</cite> context to collect data to list via await.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Context</span><span class="p">(</span><span class="n">AsyncListerMixin</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Context</span><span class="p">(</span><span class="n">AsyncListerMixin</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="o">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">await</span> <span class="n">Context</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Context</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -357,36 +362,36 @@ with float precision when divide)</li>
 <dt id="aioftp.AbstractAsyncLister">
 <em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">AbstractAsyncLister</code><span class="sig-paren">(</span><em>*</em>, <em>timeout=None</em>, <em>loop=None</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.AbstractAsyncLister" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract context with ability to collect all iterables into
-<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> via <cite>await</cite> with optional timeout (via
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> via <cite>await</cite> with optional timeout (via
 <a class="reference internal" href="#aioftp.with_timeout" title="aioftp.with_timeout"><code class="xref py py-func docutils literal"><span class="pre">aioftp.with_timeout()</span></code></a>)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>timeout</strong> (<code class="xref py py-class docutils literal"><span class="pre">None</span></code>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) &#8211; timeout for __aiter__, __anext__ operations</li>
-<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use for timeouts</li>
+<li><strong>timeout</strong> (<code class="xref py py-class docutils literal"><span class="pre">None</span></code>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) &#8211; timeout for __aiter__, __anext__ operations</li>
+<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use for timeouts</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Lister</span><span class="p">(</span><span class="n">AbstractAsyncLister</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Lister</span><span class="p">(</span><span class="n">AbstractAsyncLister</span><span class="p">):</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="nd">@with_timeout</span>
-<span class="gp">... </span>    <span class="n">async</span> <span class="k">def</span> <span class="nf">__aiter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">__aiter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="o">...</span>
 
 <span class="gp">... </span>    <span class="nd">@with_timeout</span>
-<span class="gp">... </span>    <span class="n">async</span> <span class="k">def</span> <span class="nf">__anext__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">__anext__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="o">...</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">Lister</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">Lister</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="o">...</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">await</span> <span class="n">Lister</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Lister</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span>
 <span class="go">[block, block, block, ...]</span>
 </pre></div>
@@ -396,37 +401,36 @@ with float precision when divide)</li>
 <dl class="function">
 <dt id="aioftp.with_timeout">
 <code class="descclassname">aioftp.</code><code class="descname">with_timeout</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.with_timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method decorator, wraps method with <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.wait_for" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.wait_for()</span></code></a>. <cite>timeout</cite>
+<dd><p>Method decorator, wraps method with <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.wait_for" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.wait_for()</span></code></a>. <cite>timeout</cite>
 argument takes from <cite>name</cite> decorator argument or &#8220;timeout&#8221;.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; name of timeout attribute</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; name of timeout attribute</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Raises <a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.TimeoutError" title="(in Python v3.5)">asyncio.TimeoutError</a>:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">if coroutine does not finished in timeout</td>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.TimeoutError" title="(in Python v3.6)"><strong>asyncio.TimeoutError</strong></a> &#8211; if coroutine does not finished in timeout</td>
 </tr>
 </tbody>
 </table>
 <p>Wait for <cite>self.timeout</cite></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">...</span>
 <span class="gp">... </span><span class="nd">@with_timeout</span>
-<span class="gp">... </span><span class="n">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+<span class="gp">... </span><span class="k">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="k">pass</span>
 </pre></div>
 </div>
 <p>Wait for custom timeout</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="bp">self</span><span class="o">.</span><span class="n">foo_timeout</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">...</span>
-<span class="gp">... </span><span class="nd">@with_timeout</span><span class="p">(</span><span class="s">&quot;foo_timeout&quot;</span><span class="p">)</span>
-<span class="gp">... </span><span class="n">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+<span class="gp">... </span><span class="nd">@with_timeout</span><span class="p">(</span><span class="s2">&quot;foo_timeout&quot;</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="k">pass</span>
 </pre></div>
@@ -437,31 +441,31 @@ argument takes from <cite>name</cite> decorator argument or &#8220;timeout&#8221
 <dt id="aioftp.async_enterable">
 <code class="descclassname">aioftp.</code><code class="descname">async_enterable</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.async_enterable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator. Bring coroutine result up, so it can be used as async context</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="o">...</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">AsyncContextInstance</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="gp">...</span>
-<span class="gp">... </span><span class="n">ctx</span> <span class="o">=</span> <span class="n">await</span> <span class="n">foo</span><span class="p">()</span>
-<span class="gp">... </span><span class="n">async</span> <span class="k">with</span> <span class="n">ctx</span><span class="p">:</span>
+<span class="gp">... </span><span class="n">ctx</span> <span class="o">=</span> <span class="k">await</span> <span class="n">foo</span><span class="p">()</span>
+<span class="gp">... </span><span class="k">async</span> <span class="k">with</span> <span class="n">ctx</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="c"># do</span>
+<span class="gp">... </span>    <span class="c1"># do</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nd">@async_enterable</span>
-<span class="gp">... </span><span class="n">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@async_enterable</span>
+<span class="gp">... </span><span class="k">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="o">...</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">AsyncContextInstance</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="gp">...</span>
-<span class="gp">... </span><span class="n">async</span> <span class="k">with</span> <span class="n">foo</span><span class="p">()</span> <span class="k">as</span> <span class="n">ctx</span><span class="p">:</span>
+<span class="gp">... </span><span class="k">async</span> <span class="k">with</span> <span class="n">foo</span><span class="p">()</span> <span class="k">as</span> <span class="n">ctx</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="c"># do</span>
+<span class="gp">... </span>    <span class="c1"># do</span>
 <span class="gp">...</span>
-<span class="gp">... </span><span class="n">ctx</span> <span class="o">=</span> <span class="n">await</span> <span class="n">foo</span><span class="p">()</span>
-<span class="gp">... </span><span class="n">async</span> <span class="k">with</span> <span class="n">ctx</span><span class="p">:</span>
+<span class="gp">... </span><span class="n">ctx</span> <span class="o">=</span> <span class="k">await</span> <span class="n">foo</span><span class="p">()</span>
+<span class="gp">... </span><span class="k">async</span> <span class="k">with</span> <span class="n">ctx</span><span class="p">:</span>
 <span class="gp">...</span>
-<span class="gp">... </span>    <span class="c"># do</span>
+<span class="gp">... </span>    <span class="c1"># do</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -495,14 +499,11 @@ argument takes from <cite>name</cite> decorator argument or &#8220;timeout&#8221
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -513,8 +514,8 @@ argument takes from <cite>name</cite> decorator argument or &#8220;timeout&#8221
       &copy;2016, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
       <a href="_sources/common_api.txt"

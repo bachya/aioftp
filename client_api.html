@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Client API &mdash; aioftp 0.6.0 documentation</title>
+    <title>Client API &#8212; aioftp 0.6.2 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.6.0',
+        VERSION:     '0.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,20 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.6.0 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="aioftp 0.6.2 documentation" href="index.html" />
     <link rel="next" title="Server API" href="server_api.html" />
     <link rel="prev" title="Developer tutorial" href="developer_tutorial.html" />
    
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">  
+  <body role="document">
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -51,15 +56,15 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use for creating connection and binding with streams</li>
-<li><strong>create_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">callable()</span></code></a>) &#8211; factory for creating
+<li><strong>loop</strong> (<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.BaseEventLoop</span></code></a>) &#8211; loop to use for creating connection and binding with streams</li>
+<li><strong>create_connection</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">callable()</span></code></a>) &#8211; factory for creating
 connection.
-Using default <a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.create_connection" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.create_connection()</span></code></a>
+Using default <code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.create_connection()</span></code>
 if omitted.</li>
-<li><strong>socket_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <cite>None</cite>) &#8211; timeout for read operations</li>
+<li><strong>socket_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <cite>None</cite>) &#8211; timeout for read operations</li>
 <li><strong>read_speed_limit</strong> &#8211; download speed limit in bytes per second</li>
 <li><strong>write_speed_limit</strong> &#8211; upload speed limit in bytes per second</li>
-<li><strong>path_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
+<li><strong>path_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or
 <code class="xref py py-class docutils literal"><span class="pre">None</span></code>) &#8211; timeout for path-related operations (make directory,
 unlink file, etc.)</li>
 <li><strong>path_io_factory</strong> (<a class="reference internal" href="path_io_api.html#aioftp.AbstractPathIO" title="aioftp.AbstractPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AbstractPathIO</span></code></a>) &#8211; factory of «path abstract layer»</li>
@@ -71,13 +76,13 @@ unlink file, etc.)</li>
 <dl class="method">
 <dt id="aioftp.Client.abort">
 <code class="descname">abort</code><span class="sig-paren">(</span><em>*</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.abort" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Request data transfer abort.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; wait for abort response [426]→226 if <cite>True</cite></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; wait for abort response [426]→226 if <cite>True</cite></td>
 </tr>
 </tbody>
 </table>
@@ -92,8 +97,8 @@ unlink file, etc.)</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file on server side</li>
-<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
+<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file on server side</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
 </ul>
 </td>
 </tr>
@@ -107,13 +112,13 @@ unlink file, etc.)</li>
 <dl class="method">
 <dt id="aioftp.Client.change_directory">
 <code class="descname">change_directory</code><span class="sig-paren">(</span><em>path='..'</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.change_directory" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Change current directory. Goes «up» if no parameters passed.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; new directory, goes «up» if omitted</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; new directory, goes «up» if omitted</td>
 </tr>
 </tbody>
 </table>
@@ -128,14 +133,13 @@ unlink file, etc.)</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>expected_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a>) &#8211; tuple of expected codes</li>
+<li><strong>expected_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a>) &#8211; tuple of expected codes</li>
 <li><strong>received_code</strong> (<a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a>) &#8211; received code for matching</li>
-<li><strong>info</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a>) &#8211; list of response lines from server</li>
+<li><strong>info</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a>) &#8211; list of response lines from server</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Raises <a class="reference internal" href="#aioftp.StatusCodeError" title="aioftp.StatusCodeError">aioftp.StatusCodeError</a>:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">if received code does not matches any
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#aioftp.StatusCodeError" title="aioftp.StatusCodeError"><strong>aioftp.StatusCodeError</strong></a> &#8211; if received code does not matches any
 expected code</p>
 </td>
 </tr>
@@ -152,7 +156,7 @@ expected code</p>
 <dl class="method">
 <dt id="aioftp.Client.command">
 <code class="descname">command</code><span class="sig-paren">(</span><em>command=None</em>, <em>expected_codes=()</em>, <em>wait_codes=()</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.command" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Basic command logic.</p>
 <ol class="arabic simple">
 <li>Send command if not omitted.</li>
@@ -164,11 +168,11 @@ expected code</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>command</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; command line</li>
-<li><strong>expected_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or
-<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; tuple of expected codes or expected code</li>
-<li><strong>wait_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or
-<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; tuple of wait codes or wait code</li>
+<li><strong>command</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; command line</li>
+<li><strong>expected_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; tuple of expected codes or expected code</li>
+<li><strong>wait_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; tuple of wait codes or wait code</li>
 </ul>
 </td>
 </tr>
@@ -179,15 +183,15 @@ expected code</p>
 <dl class="method">
 <dt id="aioftp.Client.connect">
 <code class="descname">connect</code><span class="sig-paren">(</span><em>host</em>, <em>port=21</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.connect" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Connect to server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; host name for connection</li>
-<li><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; port number for connection</li>
+<li><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; host name for connection</li>
+<li><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; port number for connection</li>
 </ul>
 </td>
 </tr>
@@ -198,7 +202,7 @@ expected code</p>
 <dl class="method">
 <dt id="aioftp.Client.download">
 <code class="descname">download</code><span class="sig-paren">(</span><em>source</em>, <em>destination=''</em>, <em>*</em>, <em>write_into=False</em>, <em>block_size=8192</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.download" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>High level download method for downloading files and directories
 recursively and save them to the file system.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -206,12 +210,12 @@ recursively and save them to the file system.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; source path of file or directory on server side</li>
-<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; destination path of file or directory on client
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; source path of file or directory on server side</li>
+<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; destination path of file or directory on client
 side</li>
-<li><strong>write_into</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; write source into destination (if you want download
+<li><strong>write_into</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; write source into destination (if you want download
 file and change it name, as well with directories)</li>
-<li><strong>block_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; block size for transaction</li>
+<li><strong>block_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; block size for transaction</li>
 </ul>
 </td>
 </tr>
@@ -222,15 +226,15 @@ file and change it name, as well with directories)</li>
 <dl class="method">
 <dt id="aioftp.Client.download_stream">
 <code class="descname">download_stream</code><span class="sig-paren">(</span><em>source</em>, <em>*</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.download_stream" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Create stream for read data from <cite>source</cite> file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; source path of file on server side</li>
-<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; source path of file on server side</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
 </ul>
 </td>
 </tr>
@@ -244,15 +248,15 @@ file and change it name, as well with directories)</li>
 <dl class="method">
 <dt id="aioftp.Client.exists">
 <code class="descname">exists</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.exists" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Check path for existence.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -261,13 +265,13 @@ file and change it name, as well with directories)</li>
 <dl class="method">
 <dt id="aioftp.Client.get_current_directory">
 <code class="descname">get_current_directory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.get_current_directory" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Getting current working directory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -276,16 +280,16 @@ file and change it name, as well with directories)</li>
 <dl class="method">
 <dt id="aioftp.Client.get_passive_connection">
 <code class="descname">get_passive_connection</code><span class="sig-paren">(</span><em>conn_type='I'</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.get_passive_connection" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Getting pair of reader, writer for passive connection with server.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>conn_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; connection type (&#8220;I&#8221;, &#8220;A&#8221;, &#8220;E&#8221;, &#8220;L&#8221;)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>conn_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; connection type (&#8220;I&#8221;, &#8220;A&#8221;, &#8220;E&#8221;, &#8220;L&#8221;)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.StreamReader</span></code></a>,
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.StreamWriter</span></code></a>)</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.StreamReader</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">asyncio.StreamWriter</span></code></a>)</td>
 </tr>
 </tbody>
 </table>
@@ -293,8 +297,8 @@ file and change it name, as well with directories)</li>
 
 <dl class="method">
 <dt id="aioftp.Client.get_stream">
-<code class="descname">get_stream</code><span class="sig-paren">(</span><em>*command_args</em>, <em>conn_type='I'</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.get_stream" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<code class="descname">get_stream</code><span class="sig-paren">(</span><em>*command_args</em>, <em>*</em>, <em>conn_type='I'</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.get_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Create <a class="reference internal" href="#aioftp.DataConnectionThrottleStreamIO" title="aioftp.DataConnectionThrottleStreamIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.DataConnectionThrottleStreamIO</span></code></a> for straight
 read/write io.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -303,8 +307,8 @@ read/write io.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>command_args</strong> &#8211; arguments for <a class="reference internal" href="#aioftp.Client.command" title="aioftp.Client.command"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Client.command()</span></code></a></li>
-<li><strong>conn_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; connection type (&#8220;I&#8221;, &#8220;A&#8221;, &#8220;E&#8221;, &#8220;L&#8221;)</li>
-<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
+<li><strong>conn_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; connection type (&#8220;I&#8221;, &#8220;A&#8221;, &#8220;E&#8221;, &#8220;L&#8221;)</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
 </ul>
 </td>
 </tr>
@@ -318,15 +322,15 @@ read/write io.</p>
 <dl class="method">
 <dt id="aioftp.Client.is_dir">
 <code class="descname">is_dir</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.is_dir" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Checks if path is dir.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -335,15 +339,15 @@ read/write io.</p>
 <dl class="method">
 <dt id="aioftp.Client.is_file">
 <code class="descname">is_file</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.is_file" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Checks if path is file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to check</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to check</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -352,28 +356,34 @@ read/write io.</p>
 <dl class="method">
 <dt id="aioftp.Client.list">
 <code class="descname">list</code><span class="sig-paren">(</span><em>path=''</em>, <em>*</em>, <em>recursive=False</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.list" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>List all files and directories in &#8220;path&#8221;.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; directory or file path</li>
-<li><strong>recursive</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; list recursively</li>
+<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; directory or file path</li>
+<li><strong>recursive</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; list recursively</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> or <cite>async for</cite> context</p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> or <cite>async for</cite> context</p>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">():</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># lazy list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="c1"># no interaction with client should be here(!)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># eager list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="p">(</span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">()):</span>
+<span class="gp">... </span>    <span class="c1"># interaction with client allowed, since all paths are</span>
+<span class="gp">... </span>    <span class="c1"># collected already</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span> <span class="o">=</span> <span class="n">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -381,21 +391,20 @@ read/write io.</p>
 <dl class="method">
 <dt id="aioftp.Client.login">
 <code class="descname">login</code><span class="sig-paren">(</span><em>user='anonymous'</em>, <em>password='anon&#64;'</em>, <em>account=''</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.login" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Server authentication.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>user</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; username</li>
-<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; password</li>
-<li><strong>account</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; account (almost always blank)</li>
+<li><strong>user</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; username</li>
+<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; password</li>
+<li><strong>account</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; account (almost always blank)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Raises <a class="reference internal" href="#aioftp.StatusCodeError" title="aioftp.StatusCodeError">aioftp.StatusCodeError</a>:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">if unknown code received</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#aioftp.StatusCodeError" title="aioftp.StatusCodeError"><strong>aioftp.StatusCodeError</strong></a> &#8211; if unknown code received</p>
 </td>
 </tr>
 </tbody>
@@ -405,15 +414,15 @@ read/write io.</p>
 <dl class="method">
 <dt id="aioftp.Client.make_directory">
 <code class="descname">make_directory</code><span class="sig-paren">(</span><em>path</em>, <em>*</em>, <em>parents=True</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.make_directory" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Make directory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to directory to create</li>
-<li><strong>parents</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; create parents if does not exists</li>
+<li><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to directory to create</li>
+<li><strong>parents</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; create parents if does not exists</li>
 </ul>
 </td>
 </tr>
@@ -429,11 +438,11 @@ read/write io.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; response line</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; response line</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">(ip, port)</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>)</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>)</td>
 </tr>
 </tbody>
 </table>
@@ -447,9 +456,9 @@ read/write io.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; response line</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; response line</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -458,7 +467,7 @@ read/write io.</p>
 <dl class="method">
 <dt id="aioftp.Client.parse_line">
 <code class="descname">parse_line</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.parse_line" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Parsing server response line.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -467,13 +476,13 @@ read/write io.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">(code, line)</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">(<a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>)</p>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">(<a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ConnectionResetError" title="(in Python v3.5)"><strong>ConnectionResetError</strong></a> &#8211; if received data is empty (this
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ConnectionResetError" title="(in Python v3.6)"><strong>ConnectionResetError</strong></a> &#8211; if received data is empty (this
 means, that connection is closed)</li>
-<li><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.TimeoutError" title="(in Python v3.5)"><strong>asyncio.TimeoutError</strong></a> &#8211; if there where no data for <cite>timeout</cite>
+<li><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.TimeoutError" title="(in Python v3.6)"><strong>asyncio.TimeoutError</strong></a> &#8211; if there where no data for <cite>timeout</cite>
 period</li>
 </ul>
 </td>
@@ -490,11 +499,11 @@ period</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; response line</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; response line</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">(path, info)</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a>)</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a>)</td>
 </tr>
 </tbody>
 </table>
@@ -503,7 +512,7 @@ period</li>
 <dl class="method">
 <dt id="aioftp.Client.parse_response">
 <code class="descname">parse_response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.parse_response" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Parsing full server response (all lines).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -511,10 +520,9 @@ period</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(code, lines)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>)</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>)</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Raises <a class="reference internal" href="#aioftp.StatusCodeError" title="aioftp.StatusCodeError">aioftp.StatusCodeError</a>:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">if received code does not matches all
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#aioftp.StatusCodeError" title="aioftp.StatusCodeError"><strong>aioftp.StatusCodeError</strong></a> &#8211; if received code does not matches all
 already received codes</td>
 </tr>
 </tbody>
@@ -524,21 +532,21 @@ already received codes</td>
 <dl class="method">
 <dt id="aioftp.Client.quit">
 <code class="descname">quit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.quit" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Send &#8220;QUIT&#8221; and close connection.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aioftp.Client.remove">
 <code class="descname">remove</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.remove" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>High level remove method for removing path recursively (file or
 directory).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to remove</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to remove</td>
 </tr>
 </tbody>
 </table>
@@ -547,13 +555,13 @@ directory).</p>
 <dl class="method">
 <dt id="aioftp.Client.remove_directory">
 <code class="descname">remove_directory</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.remove_directory" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Low level remove method for removing empty directory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; empty directory to remove</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; empty directory to remove</td>
 </tr>
 </tbody>
 </table>
@@ -562,13 +570,13 @@ directory).</p>
 <dl class="method">
 <dt id="aioftp.Client.remove_file">
 <code class="descname">remove_file</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.remove_file" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Low level remove method for removing file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; file to remove</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; file to remove</td>
 </tr>
 </tbody>
 </table>
@@ -577,15 +585,15 @@ directory).</p>
 <dl class="method">
 <dt id="aioftp.Client.rename">
 <code class="descname">rename</code><span class="sig-paren">(</span><em>source</em>, <em>destination</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.rename" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Rename (move) file or directory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to rename</li>
-<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path new name</li>
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path to rename</li>
+<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path new name</li>
 </ul>
 </td>
 </tr>
@@ -596,17 +604,17 @@ directory).</p>
 <dl class="method">
 <dt id="aioftp.Client.stat">
 <code class="descname">stat</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.stat" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Getting path stats.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path for getting info</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; path for getting info</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">path info</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -615,7 +623,7 @@ directory).</p>
 <dl class="method">
 <dt id="aioftp.Client.upload">
 <code class="descname">upload</code><span class="sig-paren">(</span><em>source</em>, <em>destination=''</em>, <em>*</em>, <em>write_into=False</em>, <em>block_size=8192</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.Client.upload" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>High level upload method for uploading files and directories
 recursively from file system.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -623,12 +631,12 @@ recursively from file system.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; source path of file or directory on client side</li>
-<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file or directory on server
+<li><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.Path</span></code></a>) &#8211; source path of file or directory on client side</li>
+<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file or directory on server
 side</li>
-<li><strong>write_into</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; write source into destination (if you want upload
+<li><strong>write_into</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a>) &#8211; write source into destination (if you want upload
 file and change it name, as well with directories)</li>
-<li><strong>block_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; block size for transaction</li>
+<li><strong>block_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; block size for transaction</li>
 </ul>
 </td>
 </tr>
@@ -645,8 +653,8 @@ file and change it name, as well with directories)</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file on server side</li>
-<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
+<li><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePosixPath" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">pathlib.PurePosixPath</span></code></a>) &#8211; destination path of file on server side</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; byte offset for stream start position</li>
 </ul>
 </td>
 </tr>
@@ -671,11 +679,11 @@ on exit.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; host name for connection</li>
-<li><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; port number for connection</li>
-<li><strong>user</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; username</li>
-<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; password</li>
-<li><strong>account</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; account (almost always blank)</li>
+<li><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; host name for connection</li>
+<li><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>) &#8211; port number for connection</li>
+<li><strong>user</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; username</li>
+<li><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; password</li>
+<li><strong>account</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; account (almost always blank)</li>
 <li><strong>**kwargs</strong> &#8211; <p>keyword arguments, which passed to
 <a class="reference internal" href="#aioftp.Client" title="aioftp.Client"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Client</span></code></a></p>
 </li>
@@ -684,8 +692,8 @@ on exit.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="c"># do</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">with</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="c1"># do</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -716,7 +724,7 @@ specific for data connection. This requires <cite>client</cite>.</p>
 <dl class="method">
 <dt id="aioftp.DataConnectionThrottleStreamIO.finish">
 <code class="descname">finish</code><span class="sig-paren">(</span><em>expected_codes='2xx'</em>, <em>wait_codes='1xx'</em><span class="sig-paren">)</span><a class="headerlink" href="#aioftp.DataConnectionThrottleStreamIO.finish" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/asyncio-task.html#asyncio.coroutine" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">asyncio.coroutine()</span></code></a></p>
 <p>Close connection and wait for <cite>expected_codes</cite> response from server
 passing <cite>wait_codes</cite>.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -724,10 +732,10 @@ passing <cite>wait_codes</cite>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>expected_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or
-<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; tuple of expected codes or expected code</li>
-<li><strong>wait_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or
-<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; tuple of wait codes or wait code</li>
+<li><strong>expected_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; tuple of expected codes or expected code</li>
+<li><strong>wait_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; tuple of wait codes or wait code</li>
 </ul>
 </td>
 </tr>
@@ -740,7 +748,7 @@ passing <cite>wait_codes</cite>.</p>
 <dl class="class">
 <dt id="aioftp.Code">
 <em class="property">class </em><code class="descclassname">aioftp.</code><code class="descname">Code</code><a class="headerlink" href="#aioftp.Code" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a></p>
 <p>Representation of server status code.</p>
 <dl class="method">
 <dt id="aioftp.Code.matches">
@@ -749,14 +757,14 @@ passing <cite>wait_codes</cite>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mask</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; Template for comparision. If mask symbol is not digit
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mask</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; Template for comparision. If mask symbol is not digit
 then it passes.</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Code</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Code</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Code</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;1x3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Code</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="s2">&quot;1x3&quot;</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -773,21 +781,21 @@ then it passes.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>expected_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a> or
+<li><strong>expected_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a> or
 <a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a>) &#8211; tuple of expected codes or expected code</li>
-<li><strong>received_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a> or
+<li><strong>received_codes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></a> of <a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a> or
 <a class="reference internal" href="#aioftp.Code" title="aioftp.Code"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Code</span></code></a>) &#8211; tuple of received codes or received code</li>
-<li><strong>info</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; list of lines with server response</li>
+<li><strong>info</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>) &#8211; list of lines with server response</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="c"># something with aioftp</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="c1"># something with aioftp</span>
 <span class="gp">... </span><span class="k">except</span> <span class="n">StatusCodeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">expected_codes</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">received_codes</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="c"># analyze state</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">expected_codes</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">received_codes</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># analyze state</span>
 </pre></div>
 </div>
 <p>Exception members are tuples, even for one code.</p>
@@ -822,14 +830,11 @@ then it passes.</td>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -837,11 +842,11 @@ then it passes.</td>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2015, pohmelie.
+      &copy;2016, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
       <a href="_sources/client_api.txt"

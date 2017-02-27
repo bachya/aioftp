@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Server tutorial &mdash; aioftp 0.6.1 documentation</title>
+    <title>Server tutorial &#8212; aioftp 0.6.2 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.6.1',
+        VERSION:     '0.6.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,20 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/logo.ico"/>
-    <link rel="top" title="aioftp 0.6.1 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="aioftp 0.6.2 documentation" href="index.html" />
     <link rel="next" title="Developer tutorial" href="developer_tutorial.html" />
     <link rel="prev" title="Client tutorial" href="client_tutorial.html" />
    
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">  
+  <body role="document">
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -47,8 +52,8 @@ it.</p>
 <h2>Configuring server<a class="headerlink" href="#configuring-server" title="Permalink to this headline">¶</a></h2>
 <p>At first you should create <a class="reference internal" href="server_api.html#aioftp.Server" title="aioftp.Server"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Server</span></code></a> instance and start it</p>
 <p><a class="reference internal" href="server_api.html#aioftp.Server.start" title="aioftp.Server.start"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Server.start()</span></code></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Default arguments allow anonymous login and read/write current directory. So,
@@ -61,26 +66,26 @@ virtual path. Real path is current working directory.</p>
 <a class="reference internal" href="server_api.html#aioftp.Server" title="aioftp.Server"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Server</span></code></a> instance</p>
 <p><a class="reference internal" href="server_api.html#aioftp.User" title="aioftp.User"><code class="xref py py-class docutils literal"><span class="pre">aioftp.User</span></code></a></p>
 <p><a class="reference internal" href="server_api.html#aioftp.Permission" title="aioftp.Permission"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Permission</span></code></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">users</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">users</span> <span class="o">=</span> <span class="p">(</span>
 <span class="gp">... </span>    <span class="n">aioftp</span><span class="o">.</span><span class="n">User</span><span class="p">(</span>
-<span class="gp">... </span>        <span class="s">&quot;Guido&quot;</span><span class="p">,</span>
-<span class="gp">... </span>        <span class="s">&quot;secret_password&quot;</span><span class="p">,</span>
-<span class="gp">... </span>        <span class="n">home_path</span><span class="o">=</span><span class="s">&quot;/Guido&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s2">&quot;Guido&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s2">&quot;secret_password&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">home_path</span><span class="o">=</span><span class="s2">&quot;/Guido&quot;</span><span class="p">,</span>
 <span class="gp">... </span>        <span class="n">permissions</span><span class="o">=</span><span class="p">(</span>
-<span class="gp">... </span>            <span class="n">aioftp</span><span class="o">.</span><span class="n">Permission</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="n">readable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">writable</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
-<span class="gp">... </span>            <span class="n">aioftp</span><span class="o">.</span><span class="n">Permission</span><span class="p">(</span><span class="s">&quot;/Guido&quot;</span><span class="p">,</span> <span class="n">readable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">writable</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">aioftp</span><span class="o">.</span><span class="n">Permission</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">readable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">writable</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">aioftp</span><span class="o">.</span><span class="n">Permission</span><span class="p">(</span><span class="s2">&quot;/Guido&quot;</span><span class="p">,</span> <span class="n">readable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">writable</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
 <span class="gp">... </span>        <span class="p">)</span>
 <span class="gp">... </span>    <span class="p">),</span>
 <span class="gp">... </span>    <span class="n">aioftp</span><span class="o">.</span><span class="n">User</span><span class="p">(</span>
-<span class="gp">... </span>        <span class="n">home_path</span><span class="o">=</span><span class="s">&quot;/anon&quot;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">home_path</span><span class="o">=</span><span class="s2">&quot;/anon&quot;</span><span class="p">,</span>
 <span class="gp">... </span>        <span class="n">permissions</span><span class="o">=</span><span class="p">(</span>
-<span class="gp">... </span>            <span class="n">aioftp</span><span class="o">.</span><span class="n">Permission</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="n">readable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">writable</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
-<span class="gp">... </span>            <span class="n">aioftp</span><span class="o">.</span><span class="n">Permission</span><span class="p">(</span><span class="s">&quot;/anon&quot;</span><span class="p">,</span> <span class="n">readable</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">aioftp</span><span class="o">.</span><span class="n">Permission</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">readable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">writable</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="gp">... </span>            <span class="n">aioftp</span><span class="o">.</span><span class="n">Permission</span><span class="p">(</span><span class="s2">&quot;/anon&quot;</span><span class="p">,</span> <span class="n">readable</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
 <span class="gp">... </span>        <span class="p">)</span>
 <span class="gp">... </span>    <span class="p">),</span>
 <span class="gp">... </span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This will create two users: &#8220;Guido&#8221;, who can read and write to &#8220;/Guido&#8221; folder,
@@ -95,15 +100,15 @@ permission.</p>
 <li><a class="reference internal" href="path_io_api.html#aioftp.PathIO" title="aioftp.PathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.PathIO</span></code></a> — blocking path operations</li>
 <li><a class="reference internal" href="path_io_api.html#aioftp.AsyncPathIO" title="aioftp.AsyncPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.AsyncPathIO</span></code></a> — non-blocking path operations, this one is
 blocking ones just wrapped with
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.BaseEventLoop.run_in_executor" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.run_in_executor()</span></code></a>. It&#8217;s really slow, so it&#8217;s
+<code class="xref py py-meth docutils literal"><span class="pre">asyncio.BaseEventLoop.run_in_executor()</span></code>. It&#8217;s really slow, so it&#8217;s
 better to avoid usage of this path io layer.</li>
 <li><a class="reference internal" href="path_io_api.html#aioftp.MemoryPathIO" title="aioftp.MemoryPathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.MemoryPathIO</span></code></a> — in-memory realization of file system, this
 one is just proof of concept and probably not too fast (as it can be).</li>
 </ul>
 <p>You can specify <cite>path_io_factory</cite> when creating <a class="reference internal" href="server_api.html#aioftp.Server" title="aioftp.Server"><code class="xref py py-class docutils literal"><span class="pre">aioftp.Server</span></code></a>
 instance. Default factory is <a class="reference internal" href="path_io_api.html#aioftp.PathIO" title="aioftp.PathIO"><code class="xref py py-class docutils literal"><span class="pre">aioftp.PathIO</span></code></a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="n">path_io_factory</span><span class="o">=</span><span class="n">aioftp</span><span class="o">.</span><span class="n">MemoryPathIO</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="n">path_io_factory</span><span class="o">=</span><span class="n">aioftp</span><span class="o">.</span><span class="n">MemoryPathIO</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -112,9 +117,9 @@ instance. Default factory is <a class="reference internal" href="path_io_api.htm
 <p>There is three different timeouts you can specify:</p>
 <ul class="simple">
 <li><cite>socket_timeout</cite> — timeout for low-level socket operations
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader.read" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamReader.read()</span></code></a>,
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader.readline" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamReader.readline()</span></code></a> and
-<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter.drain" title="(in Python v3.5)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamWriter.drain()</span></code></a>. This one does not affects awaiting
+<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader.read" title="(in Python v3.6)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamReader.read()</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamReader.readline" title="(in Python v3.6)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamReader.readline()</span></code></a> and
+<a class="reference external" href="https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter.drain" title="(in Python v3.6)"><code class="xref py py-meth docutils literal"><span class="pre">asyncio.StreamWriter.drain()</span></code></a>. This one does not affects awaiting
 command read operation.</li>
 <li><cite>path_timeout</cite> — timeout for file system operations</li>
 <li><cite>idle_timeout</cite> — timeout for socket read operation when awaiting command,
@@ -131,11 +136,11 @@ purpose is wait for passive connection)</li>
 <li>per user</li>
 </ul>
 <p>First one via server constructor</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="n">maximum_connections</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="n">maximum_connections</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Second one via user class</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">users</span> <span class="o">=</span> <span class="p">(</span><span class="n">aioftp</span><span class="o">.</span><span class="n">User</span><span class="p">(</span><span class="n">maximum_connections</span><span class="o">=</span><span class="mi">3</span><span class="p">),)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">users</span> <span class="o">=</span> <span class="p">(</span><span class="n">aioftp</span><span class="o">.</span><span class="n">User</span><span class="p">(</span><span class="n">maximum_connections</span><span class="o">=</span><span class="mi">3</span><span class="p">),)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -150,7 +155,7 @@ purpose is wait for passive connection)</li>
 <li>per user connection</li>
 </ul>
 <p>&#8220;Global per server&#8221; and &#8220;per connection&#8221; can be provided by constructor</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">aioftp</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">read_speed_limit</span><span class="o">=</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">write_speed_limit</span><span class="o">=</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">read_speed_limit_per_connection</span><span class="o">=</span><span class="mi">100</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span>
@@ -159,7 +164,7 @@ purpose is wait for passive connection)</li>
 </pre></div>
 </div>
 <p>User throttles can be provided by user constructor</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">users</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">users</span> <span class="o">=</span> <span class="p">(</span>
 <span class="gp">... </span>    <span class="n">aioftp</span><span class="o">.</span><span class="n">User</span><span class="p">(</span>
 <span class="gp">... </span>        <span class="n">read_speed_limit</span><span class="o">=</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span>
 <span class="gp">... </span>        <span class="n">write_speed_limit</span><span class="o">=</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span>
@@ -176,14 +181,14 @@ purpose is wait for passive connection)</li>
 <p>When you request to stop server all listen and active connections will be
 closed. But this one doesn&#8217;t stop the server immediately, if you want to wait
 for server to stop use <a class="reference internal" href="server_api.html#aioftp.Server.wait_closed" title="aioftp.Server.wait_closed"><code class="xref py py-meth docutils literal"><span class="pre">aioftp.Server.wait_closed()</span></code></a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">await</span> <span class="n">server</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">await</span> <span class="n">server</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="futher-reading">
 <h2>Futher reading<a class="headerlink" href="#futher-reading" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="server_api.html"><em>Server API</em></a></p>
+<p><a class="reference internal" href="server_api.html"><span class="doc">Server API</span></a></p>
 </div>
 </div>
 
@@ -229,14 +234,11 @@ for server to stop use <a class="reference internal" href="server_api.html#aioft
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -247,8 +249,8 @@ for server to stop use <a class="reference internal" href="server_api.html#aioft
       &copy;2016, pohmelie.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
       <a href="_sources/server_tutorial.txt"
